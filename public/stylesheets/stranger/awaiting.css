@@ -1,0 +1,19 @@
+#awaiting {
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    height: 100vh;
+}
+
+#awaiting h3, p{
+    text-align: center;
+}
+
+#awaiting .content{
+    /* margin-top: 5vh; */
+    padding-top: 15vh;
+}
+
+#awaiting a{
+    text-align: center;
+    font-size: 3vh;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

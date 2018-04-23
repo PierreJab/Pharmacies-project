@@ -1,22 +1,32 @@
-<h2>Log in</h2>
+<div id="signup">
 
-{{!-- {{> flashMessages}} --}}
+    <hr>
+    <div class="form">
 
-<form action="/process-login" method="POST">
-    <label>
-        Email:
-        <input type="text" name="email" placeholder="Your email">
-    </label>
-    <br>
+        <h2>Log in</h2>
 
-    <label>
-        Password: 
-        <input type="password" name="password" placeholder="Your password">
-    </label>
-    <br>
+        {{!-- {{> flashMessages}} --}}
 
-    <button>Log in</button>
-</form>
+        <form action="/process-login" method="POST">
+            <label>
+                <p>Email</p>
+                <input type="text" name="email" placeholder="Your email">
+                <span class="underline"></span>
+            </label>
+            <br>
 
-{{!-- <a href="/google/login">Log In with Google</a> --}}
-{{!-- <a href="/github/login">Log In with Github</a> --}}
+            <label>
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Your password">
+                <span class="underline"></span>
+            </label>
+            <br>
+
+            <button>Log in</button>
+            <p id="already">Don't have an account yet? <a href="/signup">Sign up here</a></p>
+        </form>
+
+        {{!-- <a href="/google/login">Log In with Google</a> --}}
+        {{!-- <a href="/github/login">Log In with Github</a> --}}
+    </div>
+</div>

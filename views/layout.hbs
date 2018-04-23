@@ -2,44 +2,81 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/layout.css' />
+    <link rel="stylesheet" href="/stylesheets/stranger/home.css">
+    <link rel="stylesheet" href="/stylesheets/stranger/signup.css">
+    <link rel="stylesheet" href="/stylesheets/stranger/awaiting.css">
   </head>
   <body>
 
 
-    <header>
-      <h1>IBI - Ironhack Bureau Investigation Users</h1>
-
+    <header id="layout">
       <nav>
-        <a href="/">Home</a>
+        <div id="home">
+          <a href="/">
+            <img src="https://png.icons8.com/metro/1600/pill.png" alt="">
+            Find it
+          </a>
+        </div>
 
-        {{#if blahUser}}
-          <strong>{{blahUser.email}}</strong>
-          <br>
-          {{!-- <a href="/room/add">Add a room</a> --}}
-          {{!-- <a href="/my-rooms">See Your Rooms</a> --}}
-          <a href="/logout">Log Out</a
+        <div id="connection">
+          {{#if blahUser}}
+            
+            {{!-- <a href="/room/add">Add a room</a> --}}
+            {{!-- <a href="/my-rooms">See Your Rooms</a> --}}
 
-          {{#if blahUser.isBoss}}
-            <h3>Boss Zone</h3>
-            <a href="/boss/employees">All employees</a>
+            {{#if blahUser.isAdmin}}
+              <h3>Administrator Zone</h3>
+              <a href="/admin/employees">All employees</a>
+            {{/if}}
+
+            {{#if blahUser.isPharmacy}}
+              <h3>Pharmacy Zone</h3>
+              <a href="/pharmacy/employees">All employees</a>
+              
+            
+            {{else}}
+            <strong>{{blahUser.fullName}}</strong>
+              
+            {{/if}}
+
+            | {{blahUser.email}}
+
+          {{else}}
+            <a href="/signup" class="access">Sign Up</a>
+            <a href="/login" class="access">Log in</a>
           {{/if}}
 
-          {{#if blahUser.isTA}}
-            <h3>TA Zone</h3>
-            <a href="/ta/employees">All employees</a>
-          {{/if}}
 
-        {{else}}
-          <a href="/signup">Sign Up</a>
-          <a href="/login">Log in</a>
-        {{/if}}
+          
+
+          <div class="dropdown">
+              <button class="dropbtn">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+              </button>
+                <div class="dropdown-content">
+                  <a href="/contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
+                  <hr>
+                  <a href="/About"><span class="glyphicon glyphicon-comment"></span> About</a>
+                  <hr>
+                  {{#if blahUser}}
+                  <a href="/personal/edit"><span class="glyphicon glyphicon-pencil"></span> Edit profile</a>
+                  <hr>
+                  <a href="/logout"><span class="glyphicon glyphicon-remove"></span> Log Out</a>
+                  {{/if}}
+              
+                </div>
+          </div>
+        </div>
         
       </nav>
     </header>
 
     {{{body}}}
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src='/javascripts/script.js' />
   </body>
 </html>

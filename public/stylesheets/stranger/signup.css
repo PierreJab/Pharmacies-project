@@ -1,0 +1,141 @@
+
+#signup {
+    margin: 0;
+    padding: 0;
+    /* background-color: #42d1db; */
+    /* background-color:  rgba(200, 200, 200, 0.4); */
+    /* background: linear-gradient(to right, #2bc0e4, #eaecc6); */
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    height: 100vh;
+}
+
+#signup h2 {
+    margin: 0;
+}
+
+#signup hr{
+    margin: 0vh 5vw;
+    /* padding: 4vh 0; */
+    height: 2px;
+    /* color: white; */
+    /* background-color: black; */
+    background-color: transparent;
+    width: 90%;
+}
+
+#signup .form{
+    width: 50vw;
+    margin: 15vh 25vw;
+    padding: 5vh;
+    /* border: 0.4vh solid white;
+    border-radius: 1vh; */
+    background-color: #028c97;
+    /* background-color: white; */
+    /* background-color:  rgba(230, 230, 230, 0.9); */
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+#signup h2{
+    text-align: center;
+    margin: 4vh;
+    font-size: 5vh;
+    /* color: #028c97; */
+}
+
+#signup label input,select{
+    width: 42.5vw; 
+    margin: 0vh 0 3vh 0;
+    padding: 1vh 2vw;
+    color: white;
+    /* border-radius: 1vh; */
+    /* font-size: 1.5vh; */
+    /* background-color: #028c97; */
+    border: none;
+    /* border-bottom: 1px solid white; */
+    background-color: transparent;
+    position: relative;
+    outline: none;
+}
+
+#signup button{
+    width: 10vw;
+    margin: 2vh 17vw;
+    background-color: transparent;
+    padding: 1vh;
+    /* border-radius: 1vh; */
+}
+
+#signup button:hover{
+    /* background-color: rgb(133, 133, 113); */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.4);
+    color:white;
+}
+
+
+/* ------------------ */
+
+  
+input::-webkit-input-placeholder {
+    color: white;
+    font-size: 1.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  
+input:focus::-webkit-input-placeholder {
+    color: white;
+    border: none;
+  }
+  
+input:focus+.underline {
+    transform: scale(1);
+  }
+  
+  .underline {
+    background-color: white;
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    top: -40px;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    width: 42.5vw;
+  }
+
+#signup #already{
+    text-align: center;
+}
+
+#signup #already a{
+    color: white;
+    text-decoration: none;
+}
+
+#signup #already a:hover{
+    /* color: black; */
+    text-decoration: underline;
+}
+
+
+#signup .form textarea{
+    width: 42.5vw;
+    background-color: #028c97;
+    /* border: none; */
+    outline: none;
+}
+
+
+textarea::-webkit-input-placeholder {
+    color: white;
+    font-size: 1.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+  
+textarea:focus::-webkit-textarea-placeholder {
+    color: white;
+    border: none;
+}

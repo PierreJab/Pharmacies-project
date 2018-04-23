@@ -1,0 +1,102 @@
+/* LAYOUT */
+/* #028c97 */ /* taupe */
+
+#layout nav{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #42d1db; */
+    /* background-color:  rgba(200, 200, 200, 0.4); */
+    /* background-color: transparent; */
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2vh;
+    padding: 3vh 5vw;
+    z-index: 1;
+    width: 100vw;
+}
+
+
+
+#layout nav #home img{
+    width: 3vw;
+    color: white;
+}
+
+#layout nav #home a{
+    color: white;
+    font-size: 3vh;
+}
+
+#layout nav a{
+    text-decoration: none;
+}
+
+
+#layout #connection .access{
+    color: white;
+    border: 0.3vh solid white;
+    padding: 1vh 1vw;
+    border-radius: 0.5vh;
+    margin: 0 4vw;
+    margin-top: 10vh;
+}
+
+
+#layout #connection .access:hover{
+    color: white;
+    background-color: #028c97;
+    border-color: #028c97;
+}
+
+
+/* ------ 3 DOTS HOVER ------- */
+
+
+#layout .dropdown {
+	display: inline-block;
+}
+#layout .dropbtn {
+  background-color:transparent;
+  cursor: pointer;
+  border: none;
+}
+#layout .dropdown-content {
+  display: none;
+  position: fixed;
+  margin-top: 0vh;
+  margin-left: -8vw;
+  background-color: white;
+  min-width: 11vw;
+  z-index: 1;
+  border: none;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#layout .dropdown-content hr{
+    margin: 0;
+}
+
+
+#layout .dropdown-content a {
+  color: black;
+  font-size: 2vh;
+  padding: 1em 1em;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+}
+
+
+#layout .dropdown-content a:hover {
+  background-color: rgba(200, 200, 200, 0.2);
+  color: #000;
+}
+#layout .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#layout .dropdown-content a span{
+    margin-right: 1vw;
+    color: rgba(100, 100, 100, 0.8);
+}

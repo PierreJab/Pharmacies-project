@@ -1,0 +1,52 @@
+<h2>Edit my details</h2>
+
+<form action="/process-edit/{{myDetails._id}}" method="POST">
+    <label>
+        Name: 
+        <input type="text" name="fullName" value="{{myDetails.fullName}}" placeholder="Name">
+    </label>
+    <br>
+    
+    <label>
+        Email: 
+        <input type="text" name="email" value="{{myDetails.email}}" placeholder="Email">
+    </label>
+    <br>
+
+    <button>Edit</button>
+</form>
+
+<hr>
+
+{{#each fields}}
+    <form action="/process-edit/{{myDetails._id}}/" method="POST">
+        <label>
+            <p>{{this}}:</p> 
+            {{!-- <p>{{myDetails.this}}</p> --}}
+            <button>Edit my {{this}}</button>
+            {{!-- <input type="text" name="{{this}}" > --}}
+        </label>
+    </form>
+{{/each}}
+
+<hr>
+
+<form action="/process-edit/{{myDetails._id}}/password" method="POST">
+    <label>
+        Old Password: 
+        <input type="text" name="old-password" placeholder="Enter your old password">
+    </label>
+    <br>
+    <label>
+        New Password: 
+        <input type="text" name="new-password" placeholder="Enter your new password">
+    </label>
+    <br>
+    <label>
+        Confirm New Password: 
+        <input type="text" name="confirm-password" placeholder="Confirm new password">
+    </label>
+    <br>
+    <button>Edit password</button>
+</form>
+

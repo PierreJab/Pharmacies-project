@@ -1,40 +1,48 @@
-<h2>Sign Up</h2>
+<div id="signup">
 
-{{!-- {{> flashMessages}} --}}
+    <hr>
+    <div class="form">
 
-<form action="/process-signup" method="POST">
-    <label>
-        Name: 
-        <input type="text" name="fullName" placeholder="Name">
-    </label>
-    <br>
-    
-    <label>
-        Email: 
-        <input type="text" name="email" placeholder="Email">
-    </label>
-    <br>
+        <h2>Sign Up</h2>
 
-    <label>
-        Password:
-        <input type="password" name="password" placeholder="Password">
-    </label>
-    <br>
-    
+        {{!-- {{> flashMessages}} --}}
 
-    {{!-- {{#if req.user && req.user.role === "Boss"}} --}}
-    {{#if blahUser.isBoss}}
-        <label>
-            Role:
-            <select name="role">
-                <option value="Boss">Boss</option>
-                <option value="TA">Teaching Assistant</option>
-                <option value="Developer" selected>Developer</option>
-            </select>
-        </label>
+        <form action="/process-signup" method="POST">
+            <label>
+                <p>&#x2a Full Name:</p>
+                <input type="text" name="fullName" placeholder="Enter your name">
+                <span class="underline"></span>
+            </label>
+            <br>
 
-        <br>
-    {{/if}}
+            <label>
+                <p>&#x2a Email:</p>
+                <input type="text" name="email" placeholder="Enter your email">
+                <span class="underline"></span>
+            </label>
+            <br> {{#if blahUser.isAdmin}}
+            <label>
+                <p>Role:</p>
+                <select name="role">
+                    <option value="Admin">Admin</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="User" selected>User</option>
+                </select>
+            </label>
+            <br>
+            <p>Default Password: "123"</p>
 
-    <button>Sign up</button>
-</form>
+
+            {{else}}
+            <label>
+                <p>&#x2a Password:</p>
+                <input type="password" name="password" placeholder="Enter your password">
+                <span class="underline"></span>
+            </label>
+            <br> {{/if}}
+
+            <button>Sign up</button>
+            <p id="already">Already have an account? <a href="/login">Log in here</a></p>
+        </form>
+    </div>
+</div>
