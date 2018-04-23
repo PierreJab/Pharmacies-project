@@ -144,7 +144,7 @@ router.post("/process-signup", (req, res, next) => {
     console.log("je suis encor ici"); */
     
 });
-
+//
 router.get("/awaiting", (req, res, next) => {
     res.render("auth-views/awaiting-confirmation")
 })
