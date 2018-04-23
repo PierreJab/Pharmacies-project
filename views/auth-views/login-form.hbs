@@ -22,11 +22,33 @@
             </label>
             <br>
 
+            <a href="/google/login" id="my-signin2">Log In with Google</a>
+            <a href="/github/login">Log In with Github</a>
+
+
+<!-- Google sign in button 
+            <script>
+                function onSuccess(googleUser) {
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                    }
+                function onFailure(error) {
+                    console.log(error);
+                }
+                function renderButton() {
+                    gapi.signin2.render('my-signin2', {
+                        'scope': 'profile email',
+                        'width': 240,
+                        'height': 50,
+                        'longtitle': true,
+                        'theme': 'dark',
+                        'onsuccess': onSuccess,
+                        'onfailure': onFailure
+                });
+                }
+            </script>
             <button>Log in</button>
             <p id="already">Don't have an account yet? <a href="/signup">Sign up here</a></p>
         </form>
-
-        <a href="/google/login">Log In with Google</a>
-        {{!-- <a href="/github/login">Log In with Github</a> --}}
+-->
     </div>
 </div>

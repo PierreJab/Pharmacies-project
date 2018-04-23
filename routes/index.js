@@ -54,5 +54,8 @@ router.post("/process-contact", (req, res, next) => {
   });
 });
 
+router.get('/about', (req, res, next) => {
+  res.render('about');
+})
 
 module.exports = router;
