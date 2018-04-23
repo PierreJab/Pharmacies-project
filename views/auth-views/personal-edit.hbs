@@ -1,52 +1,115 @@
-<h2>Edit my details</h2>
+<div id="edit">
 
-<form action="/process-edit/{{myDetails._id}}" method="POST">
-    <label>
-        Name: 
-        <input type="text" name="fullName" value="{{myDetails.fullName}}" placeholder="Name">
-    </label>
-    <br>
-    
-    <label>
-        Email: 
-        <input type="text" name="email" value="{{myDetails.email}}" placeholder="Email">
-    </label>
-    <br>
+    <div class="form">
 
-    <button>Edit</button>
-</form>
 
-<hr>
+        <h2>Edit my details</h2>
 
-{{#each fields}}
-    <form action="/process-edit/{{myDetails._id}}/" method="POST">
-        <label>
-            <p>{{this}}:</p> 
-            {{!-- <p>{{myDetails.this}}</p> --}}
-            <button>Edit my {{this}}</button>
-            {{!-- <input type="text" name="{{this}}" > --}}
-        </label>
-    </form>
-{{/each}}
 
-<hr>
+        <div id="info">
 
-<form action="/process-edit/{{myDetails._id}}/password" method="POST">
-    <label>
-        Old Password: 
-        <input type="password" name="oldPassword" placeholder="Enter your old password">
-    </label>
-    <br>
-    <label>
-        New Password: 
-        <input type="password" name="newPassword" placeholder="Enter your new password">
-    </label>
-    <br>
-    <label>
-        Confirm New Password: 
-        <input type="password" name="confirmPassword" placeholder="Confirm new password">
-    </label>
-    <br>
-    <button>Edit password</button>
-</form>
+            <form action="/process-edit/{{myDetails._id}}" method="POST" enctype="multipart/form-data">
+                <label>
+                    <p>Name:</p>
+                    <input type="text" name="fullName" value="{{myDetails.fullName}}" placeholder="Name">
+                </label>
+                <br>
+                
+                <label>
+                    <p>Email:</p> 
+                    <input type="text" name="email" value="{{myDetails.email}}" placeholder="Email">
+                </label>
+                <br>
 
+                <label>
+                    <p>Birthday:</p>
+                    <input type="date" name="birthday" value="{{myDetails.birthday}}" placeholder="Enter your birthday">
+                </label>
+                <br>
+
+                <label>
+                    <p>Phone Number:</p>
+                    <input type="text" name="phone" value="{{myDetails.phone}}" placeholder="Enter your phone number">
+                </label>
+                <br>
+
+                <label>
+                    <p>Address:</p>
+                    <input type="text" name="address" value="{{myDetails.address}}" placeholder="Your address">
+                    <input type="text" name="zip" value="{{myDetails.zip}}" placeholder="Zip code" class="address">
+                    <input type="text" name="city" value="{{myDetails.city}}" placeholder="City" class="address">
+                    <input type="text" name="country" value="{{myDetails.country}}" placeholder="Country" class="address">
+                </label>
+                <br>
+
+                <label>
+                    <p>About Me:</p>
+                    <textarea type="text" name="aboutMe" value="{{myDetails.aboutMe}}" placeholder="My information I want to share"></textarea>
+                </label>
+                <br>
+
+                <label>
+                    <p>Profile Picture:</p> 
+                    <input type="file" name="profilePicture" value="{{myDetails.profilePicture}}" placeholder="Email">
+                </label>
+                <br>
+
+                <button>Save</button>
+            </form>
+
+        </div>
+
+        <hr>
+
+        <div id="password">
+
+            <button type="button" class="change" data-toggle="modal" data-target="#myModal">
+            Change my password
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Change my password</h4>
+                </div>
+
+                <form action="/process-edit/{{myDetails._id}}/password" method="POST">
+                
+                <div class="modal-body">
+                        <label>
+                            <p>Old Password: </p>
+                            <input type="password" name="oldPassword" placeholder="Enter your old password">
+                        </label>
+                        <br>
+                        <label>
+                            <p>New Password: </p>
+                            <input type="password" name="newPassword" placeholder="Enter your new password">
+                        </label>
+                        <br>
+                        <label>
+                            <p>Confirm New Password: </p>
+                            <input type="password" name="confirmPassword" placeholder="Confirm new password">
+                        </label>
+                        <br>
+
+                        
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Save password</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+
+        </div>
+
+
+
+    </div>
+</div>

@@ -4,9 +4,23 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/user-model");
 const nodemailer = require("nodemailer");
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
 
-// Bcrypt to encrypt passwords
-// const bcryptSalt = 10;
+cloudinary.config({
+    cloud_name: process.env.cloudinary_name,
+    api_key: process.env.cloudinary_key,
+    api_secret: process.env.cloudinary_secret
+  });
+  
+const storage = cloudinaryStorage({
+    cloudinary,
+    folder: 'more-movies'
+  })
+  
+const upload = multer({ storage });
+  
 
 const transport = nodemailer.createTransport({
   service: 'gmail',
@@ -240,13 +254,52 @@ router.get("/personal/edit", (req, res, next) => {
     res.render("auth-views/personal-edit");
 });
 
-router.post("/process-edit/:id", (req, res, next) => {
+router.post("/process-edit/:id", upload.single('profilePicture'), (req, res, next) => {
+    if (!req.user){
+        next();
+        return;
+    }
+    console.log("im here");
+
+    id = req.params.id;
+    const {fullName, email, birthday, phone, address, zip, city, country, aboutMe} = req.body;
+    // const {profilePicture} = req.file;
+    console.log(req.file);
+    if (req.file){
+        const {originalname, secure_url} = req.file;
+    } else {
+        originalname = "";
+        secure_url = "";
+    };
+
+    User.findByIdAndUpdate(id, 
+        {
+            fullName, 
+            email, 
+            birthday, 
+            phone, 
+            address, 
+            zip, 
+            city, 
+            country, 
+            aboutMe,
+            profilePicture: {
+                originalname, 
+                secure_url
+            }, 
+        })
+        .then(() => {
+            console.log("updated");
+            req.flash("success", "Information saved!");
+            res.redirect("/personal/edit");
+        })
+        .catch((err) => {
+            next(err);
+        })
+
 
 });
 
-/* router.post("/process-edit/:id/:field", (req, res, next) =>{
-
-}); */
 
 
 router.post("/process-edit/:id/password", (req, res, next) =>{
@@ -296,3 +349,29 @@ router.post("/process-edit/:id/password", (req, res, next) =>{
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+router.post("/process-movie", upload.single('fileUpload') , (req, res, next) => {
+    const {title, description, } = req.body;
+    const {originalname, secure_url} = req.file;
+  
+    Movie.create({
+      title, 
+      description, 
+      imageName: originalname,
+      imageUrl: secure_url
+    })
+    .then(() => {
+      res.redirect('/')
+    })
+    .catch((err) => {
+      next(err);
+    });
+  
+  
+  });

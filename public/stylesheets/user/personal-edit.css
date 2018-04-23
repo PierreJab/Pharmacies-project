@@ -1,0 +1,137 @@
+#edit {
+    margin: 0;
+    padding: 10vh;
+    min-height: 100vh;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    color: white;
+    font-family:Geneva, Verdana, sans-serif;
+}
+
+#edit h2{
+    text-align: center;
+    margin-bottom: 6vh;
+}
+
+
+#edit .form{
+    width: 80vw;
+    margin: 0 2vw;
+    padding: 3vh 5vw;
+    background-color: #028c97;
+}
+
+#edit #info input, textarea{
+    width: 60vw;
+    margin: 2vh 5vw;
+    padding: 0.5vh 2vw;
+    border: 1px solid white;
+    border-radius: 1vh;
+    color: black;
+    font-size: 1.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    
+}
+
+
+#edit #info .address {
+    width: 13vw;
+    margin: 0 5vw 3vh 5vw;
+}
+
+#edit #info label {
+    text-align: center;
+}
+
+#edit #info button{
+    margin-left: 58vw;
+    padding: 1vh 0;
+    width: 7vw;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1vh;
+}
+
+#edit #info button:hover{
+    background-color: white;
+    color: #028c97;
+}
+
+
+/* ------- Style --------- */
+
+#edit input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+#edit input:focus::-webkit-input-placeholder {
+    border: none;
+    color: black;
+} 
+
+
+#edit textarea:focus::-webkit-textarea-placeholder {
+    color: black;
+    border: none;
+}
+
+
+#edit textarea::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* ------ Password ------- */
+
+
+#edit #password .change{
+    margin: 3vh 0 3vh 26vw;
+    padding: 1vh 0;
+    width: 17vw;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1vh;
+    outline: none;
+}
+
+#edit #password .change:hover{
+    background-color: white;
+    color: #028c97;
+}
+
+
+#edit #password .modal-content{
+    color: black;
+    border-radius: 0;
+    margin-top: 20vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#edit #password label{
+    margin: 1.5vh;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    font-size: 1.5vh;
+    align-items: baseline;
+    
+}
+
+#edit #password label input{
+    width: 20vw;
+    margin-right: 5vw;
+}
+
+#edit #password .btn-success{
+    background-color: #028c97;
+    border-color: white;
+}
+
+#edit #password .btn-success:hover{
+    background-color: white;
+    border-color: #028c97;
+    color: #028c97;
+}

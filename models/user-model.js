@@ -13,8 +13,13 @@ const userSchema = new Schema ({
     },
     status: {type: String, enum: ["Pending Confirmation", "Active"], default: "Pending Confirmation"},
     confirmationCode: {type: String, unique: true},
-    phone: {type: Number},
+    profilePicture: {
+        originalname: {type: String},
+        secure_url: {type: String} 
+    },
+    phone: {type: String},
     address: {type: String},
+    city: {type: String},
     zip: {type: String},
     country: {type: String},
     birthday: {type: Date},
