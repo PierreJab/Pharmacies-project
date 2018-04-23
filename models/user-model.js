@@ -29,6 +29,8 @@ const userSchema = new Schema ({
     timestamps: true
 });
 
+//add
+
 userSchema.virtual("isAdmin").get(function(){
     return this.role === "Admin";
 });
