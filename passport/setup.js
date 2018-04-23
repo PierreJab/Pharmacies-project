@@ -3,8 +3,8 @@ const passport = require("passport");
 const User = require("../models/user-model");
 
 // Run the code inside these files
-// require("./github-strategy");
-// require("./google-strategy");
+require("./github-strategy");
+require("./google-strategy");
 
 
 // serialize: what information will we store in the session?

@@ -231,7 +231,7 @@ router.get("/google/login",
 router.get("/google/success", 
     passport.authenticate("google", {
         successRedirect: "/",
-        successFlash: "Google lig in success!",
+        successFlash: "Google log in success!",
         failureRedirect: "/login",
         failureFlash: "Google log in failure."
     }));
