@@ -84,16 +84,6 @@ router.post("/process-signup", (req, res, next) => {
 
     const confirmationCode = hashUsername;
 
-    console.log("je suis ici");
-
-    /* User.create({fullName, encryptedPassword, email, confirmationCode})
-    .then(() => {
-        console.log("created");
-    })
-    .catch((err) => {
-        next(err);
-    }); */
-
     const newUser = new User({
         fullName,
         encryptedPassword,
@@ -136,12 +126,6 @@ router.post("/process-signup", (req, res, next) => {
         };
     });
 
-
-    /* newUser.save();
-
-
-    
-    console.log("je suis encor ici"); */
     
 });
 //
@@ -199,7 +183,7 @@ router.post("/process-login", (req, res, next) => {
                 req.flash("error", "Wrong password");
                 res.redirect("/login");
                 return;
-            } 
+            }
             
             // req.session.isLoggedIn = true;
             // "req.login()" is Passport's method for logging a user in
@@ -260,9 +244,55 @@ router.post("/process-edit/:id", (req, res, next) => {
 
 });
 
-router.post("/process-edit/:id/:field", (req, res, next) =>{
+/* router.post("/process-edit/:id/:field", (req, res, next) =>{
 
+}); */
+
+
+router.post("/process-edit/:id/password", (req, res, next) =>{
+    if (!req.user){
+        next();
+        return;
+    }
+
+    id = req.params.id;
+    const {oldPassword, newPassword, confirmPassword} = req.body;
+
+    bcrypt.compare(oldPassword, req.user.encryptedPassword, function(err, isMatch) {
+        // isMatch === true
+        // console.log(isMatch);
+        if(!isMatch) {
+            req.flash("error", "Wrong password!");
+            res.redirect("/personal/edit");
+            return;
+        };
+    });
+
+    if (newPassword.length < 6 || newPassword.match(/[0-9]/) === null){
+        req.flash("error", "Your password must have at least one number");
+        res.redirect("/signup");
+        return;
+    };
+
+    if (newPassword !== confirmPassword){
+        req.flash("error", "Enter the same password");
+        res.redirect("personal/edit");
+        return;
+    };
+
+    const salt = bcrypt.genSaltSync(10);
+    const newEncryptedPassword = bcrypt.hashSync(newPassword, salt);
+
+    User.findByIdAndUpdate(id, {encryptedPassword: newEncryptedPassword})
+    .then(() => {
+        console.log("did it");
+        req.flash("success", "Password edited!");
+        res.redirect("/personal/edit");
+    })
+    .catch((err) =>{
+        console.log("problem");
+        next(err);
+    });
 });
-
 
 module.exports = router;
