@@ -74,5 +74,7 @@ app.use('/', authRouter);
 const adminRouter = require('./routes/admin-router');
 app.use('/', adminRouter);
 
+const loggedRouter = require('./routes/logged-router');
+app.use('/', loggedRouter);
 
 module.exports = app;
