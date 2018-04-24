@@ -26,10 +26,10 @@ const userSchema = new Schema ({
     aboutMe: {type: String},
     social: {type: String},
     //link to the user to any stores that they might have created
-    storesUploaded: {
-        //type: .....
-        // ref: Store,
-    }
+    /* storesUploaded: {
+        type: .....
+        ref: "Store",
+    } */
 }, {
     timestamps: true
 });
