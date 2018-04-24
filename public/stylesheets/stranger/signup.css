@@ -120,7 +120,7 @@
 
  #signup textarea::-webkit-input-placeholder {
     color: white;
-    font-size: 3vh;
+    font-size: 1vh;
     font-family: ‘Trebuchet MS’, ‘Lucida Sans Unicode’, ‘Lucida Grande’, ‘Lucida Sans’, Arial, sans-serif
  }
   
