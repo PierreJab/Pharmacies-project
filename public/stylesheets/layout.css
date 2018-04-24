@@ -1,6 +1,10 @@
 /* LAYOUT */
 /* #028c97 */ /* taupe */
 
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Forum|IBM+Plex+Serif|Maven+Pro|Noto+Serif|Ovo|Quicksand|Roboto');
+
+
+
 #layout nav{
     position: absolute;
     display: flex;
