@@ -20,7 +20,7 @@ const userSchema = new Schema ({
     phone: {type: String},
     address: {type: String},
     city: {type: String},
-    zip: {type: String},
+    zip: {type: String, required: true},
     country: {type: String},
     birthday: {type: Date},
     aboutMe: {type: String},

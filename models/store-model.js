@@ -2,22 +2,22 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const storeSchema = new Schema({
-    name: {type: String, required: true},
-    //check if address is a string
-    address: {type: String, required: true},
-    phoneNumber: {type: String, required: true},
-    //what data type?
-    openingHours: {type: String},
-    prescriptions: {type: String},
-    licenses: {type: String},
-    //what type is rating
+    storeName: {type: String, required: true},
+    storeAddress: {type: String, required: true},
+    storeZip: {type: String, required: true},
+    storeCity: {type: String},
+    storeCountry: {type: String},
+    storePhoneNumber: {type: String, required: true},
+    storeHours: {type: String},
+    prescriptions: {type: Array},
+    licenses: {type: Array},
+    services: {type: Array},
     rating: {type: Number},
     storeImage: {type: String},
-    //person who created the store
-    //what type is user comments
+    //uploading userId: 
     reviews: [
         {
-            user: {type: String },
+            reviewer: {type: String },
             comments: {type: String, required: true
         }
     }]
