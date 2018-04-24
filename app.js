@@ -77,4 +77,7 @@ app.use('/', adminRouter);
 const loggedRouter = require('./routes/logged-router');
 app.use('/', loggedRouter);
 
+const pharmaciesRouter = require('./routes/pharmacies-router');
+app.use('/', pharmaciesRouter);
+
 module.exports = app;

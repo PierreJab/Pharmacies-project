@@ -1,4 +1,4 @@
-<div id="add-store">
+<div id="edit">
     <div class="form">
 
         <h2>Add a pharmacy</h2>
@@ -13,17 +13,17 @@
                 <br>
 
                 <label>
-                    <p>&#x2a Address:</p>
-                    <input type="text" name="storeAddress" placeholder="Enter the store's address">
-                    <input type="text" name="storeZip" placeholder="Zip code" class="storeAddress">
-                    <input type="text" name="storeCity" placeholder="City" class="storeAddress">
-                    <input type="text" name="storeCountry" placeholder="Country" class="storeAddress">
+                    <p>&#x2a Phone Number:</p>
+                    <input type="text" name="storePhoneNumber" placeholder="Enter the store's phone number">
                 </label>
                 <br>
 
                 <label>
-                    <p>&#x2a Phone Number:</p>
-                    <input type="text" name="storePhoneNumber" placeholder="Enter the store's phone number">
+                    <p>&#x2a Address:</p>
+                    <input type="text" name="storeAddress" placeholder="Enter the store's address">
+                    <input type="text" name="storeZip" placeholder="Zip code" class="Address">
+                    <input type="text" name="storeCity" placeholder="City" class="Address">
+                    <input type="text" name="storeCountry" placeholder="Country" class="Address">
                 </label>
                 <br>
 
@@ -51,13 +51,14 @@
                 </label>
                 <br>
 
-                <label>
+                <label id="picture">
                     <p>Store Image:</p>
-                    <input type="string" name="storeImage" placeholder="Upload a picture of the store">
+                    <input type="file" name="storeImage" placeholder="Upload a picture of the store" class="input-file">
+                    <label for="file" class="label-file">Upload picture</label>
                 </label>
                 <br>
 
-                <button>Add the Store</button>
+                <button>Add this Store</button>
             </form>
 
 

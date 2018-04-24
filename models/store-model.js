@@ -14,7 +14,10 @@ const storeSchema = new Schema({
     licenses: {type: Array},
     services: {type: Array},
     rating: {type: Number},
-    storeImage: {type: String},
+    storeImage: {
+        originalname: {type: String},
+        secure_url: {type: String} 
+    },
     /* owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
