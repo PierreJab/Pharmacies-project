@@ -2,8 +2,13 @@
 /* #028c97 */ /* taupe */
 
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Forum|IBM+Plex+Serif|Maven+Pro|Noto+Serif|Ovo|Quicksand|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Cinzel+Decorative|Monoton|Poiret+One|Syncopate|Tenor+Sans');
 
-
+#layout nav #logo{
+    /* font-family: 'Cinzel'; */
+    font-family: 'Tenor Sans';
+    font-size: 1vh;
+}
 
 #layout nav{
     position: absolute;
