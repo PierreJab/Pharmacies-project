@@ -54,6 +54,7 @@
 #signup button{
     width: 10vw;
     margin: 2vh 17vw;
+    border: 1px solid white;
     background-color: transparent;
     padding: 1vh;
     /* border-radius: 1vh; */
@@ -107,6 +108,7 @@ input:focus+.underline {
 #signup .form textarea{
     width: 42.5vw;
     margin: 0 1vw;
+    border-radius: 0;
     background-color: #028c97;
     /* border: none; */
     outline: none;
@@ -121,4 +123,25 @@ input:focus+.underline {
 #signup textarea:focus::-webkit-textarea-placeholder {
     color: white;
     border: none;
+}
+
+
+
+#signup #social {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#signup #social a {
+    color: white;
+    padding: 1vh 2vw;
+    border: 1px solid white;
+    text-decoration: none;
+    margin: 3vh;
+}
+
+#signup #social a:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.4);
+    color:white;
 }

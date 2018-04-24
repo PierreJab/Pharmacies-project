@@ -52,6 +52,12 @@
 
 /* ------ 3 DOTS HOVER ------- */
 
+#layout .dropdown .profile{
+    border-radius: 50%; 
+    height: 6vh;
+    width: auto;
+}
+
 
 #layout .dropdown {
 	display: inline-block;

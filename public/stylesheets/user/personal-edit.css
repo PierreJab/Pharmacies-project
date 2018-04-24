@@ -83,6 +83,41 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+
+#edit .label-file {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+#edit .label-file:hover {
+    color: rgba(230, 230, 230, 0.8);
+}
+
+#edit .input-file {
+    display: none;
+}
+
+#edit #info #picture p{
+    margin-left: 31vw;
+    margin-bottom: 6vh;
+    margin-top: 4vh;
+}
+
+
+#edit #info .profile{
+    margin: 4vh 6vw;
+    border-radius: 50%; 
+    width: 5vw;
+    height: auto;
+}
+
+ #edit #info #textarea{
+    color: black
+}
+
 /* ------ Password ------- */
 
 

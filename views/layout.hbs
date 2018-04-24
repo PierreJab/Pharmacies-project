@@ -55,7 +55,16 @@
 
           <div class="dropdown">
               <button class="dropbtn">
-                <span class="glyphicon glyphicon-option-vertical"></span>
+                {{#if blahUser}}
+                  {{#if myDetails.profilePicture.secure_url}}
+                      <img class="profile" src="{{myDetails.profilePicture.secure_url}}" alt="">
+                  {{else}}
+                      <img class="profile" src="http://svgur.com/i/jJ.svg" alt="">
+                  {{/if}}
+                {{else}}
+                  <span class="glyphicon glyphicon-option-vertical"></span>
+                {{/if}}
+              
               </button>
                 <div class="dropdown-content">
                   <a href="/contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a>

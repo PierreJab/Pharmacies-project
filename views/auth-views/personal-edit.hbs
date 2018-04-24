@@ -44,14 +44,23 @@
 
                 <label>
                     <p>About Me:</p>
-                    <textarea type="text" name="aboutMe" value="{{myDetails.aboutMe}}" placeholder="My information I want to share"></textarea>
+                    <textarea id="textarea" type="text" name="aboutMe" placeholder="My information I want to share">{{myDetails.aboutMe}}</textarea>
                 </label>
                 <br>
 
-                <label>
+                <label id="picture">
                     <p>Profile Picture:</p> 
-                    <input type="file" name="profilePicture" value="{{myDetails.profilePicture}}" placeholder="Email">
+                        <input type="file" name="profilePicture" value="{{myDetails.profilePicture}}" placeholder="Email" class="input-file">
+                    <label for="file" class="label-file">Upload picture</label>
                 </label>
+
+                {{#if myDetails.profilePicture.secure_url}}
+                    <img class="profile" src="{{myDetails.profilePicture.secure_url}}" alt="">
+                {{else}}
+                    <img class="profile" src="http://svgur.com/i/jJ.svg" alt="">
+                {{/if}}
+
+
                 <br>
 
                 <button>Save</button>
