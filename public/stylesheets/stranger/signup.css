@@ -23,9 +23,10 @@
     width: 50vw;
     margin: 15vh 25vw;
     padding: 5vh;
+    border: 8px solid #3C3731;
     /* border: 0.4vh solid white;
     border-radius: 1vh; */
-    background-color: #028c97;
+    background-color: 	#006994;
     /* background-color: white; */
     /* background-color:  rgba(230, 230, 230, 0.9); */
     color: white;
@@ -106,15 +107,16 @@ input:focus+.underline {
 }
 #signup .form textarea{
     width: 42.5vw;
+    height: 10vh;
     margin: 0 1vw;
-    background-color: #028c97;
+    background-color: #3C3731;
     /* border: none; */
     outline: none;
     color: white;
 }
 #signup textarea::-webkit-input-placeholder {
     color: white;
-    font-size: 1.5vh;
+    font-size: 3vh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
   
