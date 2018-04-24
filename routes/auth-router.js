@@ -7,6 +7,7 @@ const nodemailer = require("nodemailer");
 const multer = require("multer");
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
+const Store = require("../models/store-model");
 
 cloudinary.config({
     cloud_name: process.env.cloudinary_name,
@@ -106,8 +107,7 @@ router.post("/process-signup", (req, res, next) => {
     
     newUser.save((err) => {
         if (err) {
-            console.log("pas marché")
-            console.log(err);
+            console.log("pas marché");
             res.render("auth-views/signup-form", { message: "Something went wrong" });
         } else {
             const link = `http://localhost:3000/confirm/${hashUsername}/${email}`;
@@ -573,7 +573,17 @@ router.get("/pharmacies/add", (req, res, next) => {
     res.render("auth-views/add-store");
 });
 
-router.post(/"process-add")
+router.post("/process-add", (req, res, next) => {
+    const { storeName, storeAddress, storeZip, storeCity, storeCountry, storePhoneNumber, prescriptions, licenses, services, storeImage } = req.body;
+    Store.create({storeName, storeAddress, storeZip, storeCity, storeCountry, storePhoneNumber, prescriptions, licenses, services, storeImage})
+        .then(() => {
+            res.redirect("/")
+        })
+        .catch((err) => {
+            next(err);
+        });
+    return;
+});
 
 router.get("/personal/edit", (req, res, next) => {
     res.locals.myDetails = req.user;
