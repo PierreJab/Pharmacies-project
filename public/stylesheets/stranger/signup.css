@@ -128,15 +128,10 @@
     color: white;
     border: none;
 }
-
-
-
 #signup #social {
     display: flex;
     justify-content: space-evenly;
 }
-
-
  
  
  #signup #social {
@@ -151,13 +146,11 @@
     text-decoration: none;
     margin: 3vh;
 }
-
 #signup #social a:hover{
     background-color: rgba(0, 0, 0, 0.4);
     border-color: rgba(0, 0, 0, 0.4);
     color:white;
 }
-
  
  #signup #social a:hover{
     background-color: rgba(0, 0, 0, 0.4);
