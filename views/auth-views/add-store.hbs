@@ -8,13 +8,13 @@
             <form action="/process-add/{{storeDetails._id}}" method="POST" enctype="multipart/form-data">
                 <label>
                     <p>&#x2a Pharmacy Name:</p>
-                    <input type="text" name="storeName" value="{{storeDetails.storeName}}" placeholder="Store name">
+                    <input type="text" name="storeName" value="{{storeDetails.storeName}}" placeholder="Enter store name">
                 </label>
                 <br>
 
                 <label>
                     <p>&#x2a Address:</p>
-                    <input type="text" name="storeAddress" value="{{storeDetails.storeAddress}}" placeholder="Store address">
+                    <input type="text" name="storeAddress" value="{{storeDetails.storeAddress}}" placeholder="Enter the store's address">
                     <input type="text" name="storeZip" value="{{storeDetails.storeZip}}" placeholder="Zip code" class="storeAddress">
                     <input type="text" name="storeCity" value="{{storeDetails.storeCity}}" placeholder="City" class="storeAddress">
                     <input type="text" name="storeCountry" value= "{{storeDetails.storeCountry}}" placeholder="Country" class="storeAddress">
@@ -23,14 +23,33 @@
 
                 <label>
                     <p>&#x2a Phone Number:</p>
-                    <input type="text" name="storePhoneNumber" value="{{storeDetails.storePhoneNumber}}" placeholder="Phone number">
+                    <input type="text" name="storePhoneNumber" value="{{storeDetails.storePhoneNumber}}" placeholder="Enter the store's phone number">
+                </label>
+                <br>
+
+                <!--<label>
+                    <p>Store Hours:</p>
+                    <input type="" name="storeHours" value="{{storeDetails.storeHours}}" placeholder="Enter store hours">
+                </label>
+                <br> -->
+
+                <label>
+                    <p>Available Prescriptions:</p>
+                    <input type="array" name="prescriptions" value="{{storeDetails.prescriptions}}" placeholder="Enter the prescriptions offered">
                 </label>
                 <br>
 
                 <label>
-                    <p>Store Hours:</p>
-                    <input type="" name="storeHours" value="{{storeDetails.storeHours}}" placeholder="">
+                    <p>Professional Licenses:</p>
+                    <input type="array" name="licenses" value="{{storeDetails.licenses}}" placeholder="Enter any professional licenses">
                 </label>
+                <br>
+
+                <label>
+                    <p>Services Offered:</p>
+                    <input type="array" name="services" value="{{storeDetails.services}}" placeholder="Ente"
+                </label>
+
             </form>
 
 
