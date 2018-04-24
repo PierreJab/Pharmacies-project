@@ -568,8 +568,11 @@ router.get("/github/success", passport.authenticate("github", {
 
 
 
+router.get("/pharmacies/add", (req, res, next) => {
+    res.render("auth-views/add-store");
+});
 
-
+router.post(/"process-add")
 
 router.get("/personal/edit", (req, res, next) => {
     res.locals.myDetails = req.user;
