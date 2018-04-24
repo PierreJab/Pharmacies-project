@@ -36,6 +36,15 @@ router.post("/process-add", upload.single('profilePicture'), (req, res, next) =>
     return;
 });
 
+router.get("/pharmacies/:id", (req, res, next) => {
+});
+
+router.get("/pharmacies/:id/edit", (req, res, next) => {
+
+});
+
+router.get("/process-store-edit")
+
 // router.get("/pharmacies/edit", (req, res, next) => {
 //     res.locals.
 // })
