@@ -4,11 +4,6 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Forum|IBM+Plex+Serif|Maven+Pro|Noto+Serif|Ovo|Quicksand|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Cinzel+Decorative|Monoton|Poiret+One|Syncopate|Tenor+Sans');
 
-#layout nav #logo{
-    /* font-family: 'Cinzel'; */
-    font-family: 'Tenor Sans';
-    font-size: 1vh;
-}
 
 #layout nav{
     position: absolute;
@@ -25,16 +20,19 @@
     width: 100vw;
 }
 
-
+#layout nav #home{
+    margin: -2vh;
+}
 
 #layout nav #home img{
-    width: 3vw;
+    width: 4vw;
     color: white;
 }
 
 #layout nav #home a{
     color: white;
-    font-size: 3vh;
+    font-size: 5vh;
+    font-family: 'Tenor Sans';
 }
 
 #layout nav a{

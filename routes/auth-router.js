@@ -570,7 +570,6 @@ router.get("/github/success", passport.authenticate("github", {
 
 router.get("/personal/edit", (req, res, next) => {
     res.locals.myDetails = req.user;
-    res.locals.fields = ["fullName", "email"];
     res.render("auth-views/personal-edit");
 });
 
