@@ -55,10 +55,11 @@ router.post("/process-add", upload.single('profilePicture'), (req, res, next) =>
 //single pharmacy page by id
 
 router.get("/pharmacies/:id", (req, res, next) => {
-    Store.findById(req.params.storeId)
-    .then((bookDetails) => {
+    Store.findById(req.params.id)
+    .then((storeDetails) => {
+        var Store = storeDetails;
         // res.locals.store = storeDetails;
-        res.render('pharmacy-views/single-pharmacy-page');
+        res.render('pharmacy-views/single-pharmacy-page', {Store});
     })
     .catch((err) => {
         next(err);

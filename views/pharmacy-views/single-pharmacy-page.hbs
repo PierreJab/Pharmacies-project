@@ -1,19 +1,26 @@
-<h2>Hello</h2>
+<div id="pharmacy-pages">
 
-        <h3>{{Store.storeName}}</h3>
+<div class = "container">
+
+        <h3>Learn more about {{Store.storeName}}</h3>
         <h4>Phone number: {{Store.storePhoneNumber}}</h4>
         
         <h4>Prescriptions offered: {{Store.prescriptions}}</h4>
         <h4>Pharmacy licenses: {{Store.licenses}}</h4>
-        <h4>{{Store.services}}</h4>
+        <h4>Services offered: {{Store.services}}</h4>
 
-        <h4>{{Store.storeAddress}}</h4>
+        <h4>Address:{{Store.storeAddress}}</h4>
         <h4>{{Store.storeCity}}, {{this.storeZip}}</h4>
         <h4>{{Store.storeCountry}}</h4>
-        <h4>{{Store.storeHours}}</h4>
-        <h4>{{Store.rating}}</h4>
+        <h4>Operating hours: {{Store.storeHours}}</h4>
+        <h4>Rating: {{Store.rating}}</h4>
         <h4>Reviews:</h4>
+        <!--Submit rating -->
 
+</div>
+
+<button>Claim as Owner</button>
+<button>Add to Favorites</button>
 <a href='/pharmacies'>Go Back</a>
 
 <!--

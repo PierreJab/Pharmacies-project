@@ -102,3 +102,11 @@
     justify-content: space-between;
     text-align: center;
 }
+
+.get-started {
+    color: white;
+    border: 1px solid white;
+    margin: 5px;
+    padding: 7px;
+    text-decoration: none;
+}

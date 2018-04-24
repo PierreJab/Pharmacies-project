@@ -3,7 +3,13 @@
         <h2>Edit {{Store.storeName}}</h2>
 
         <div id="info">
-            <form action="/process-store-edit/{{storeDetails._id}}" method="POST"></form>
+            <form action="/process-store-edit/{{storeDetails._id}}" method="POST">
+            <label>
+                <p>Store Name:</p>
+                <input type = "text" name="storeName" value="storeDetails.storeName" placeholder="name">
+            </label>
+
+            </form>
         </div>
     </div>
 </div>

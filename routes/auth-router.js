@@ -498,7 +498,7 @@ router.get("/login", (req, res, next) => {
 
 
 router.post("/login", passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/pharmacies",
     failureRedirect: "/auth-views/login",
     failureFlash: true,
     passReqToCallback: true
@@ -526,7 +526,7 @@ router.post("/process-login", (req, res, next) => {
             // "req.login()" is Passport's method for logging a user in
             req.flash("success", "Log in successful!");
             req.login(userDetails, (userDetails) => {
-                res.redirect("/");
+                res.redirect("/pharmacies");
             });
             
         })
@@ -551,7 +551,7 @@ router.get("/google/login",
     }));
 router.get("/google/success", 
     passport.authenticate("google", {
-        successRedirect: "/",
+        successRedirect: "/pharmacies",
         successFlash: "Google log in success!",
         failureRedirect: "/login",
         failureFlash: "Google log in failure."
@@ -560,7 +560,7 @@ router.get("/google/success",
 
 router.get("/github/login", passport.authenticate("github"));
 router.get("/github/success", passport.authenticate("github", {
-    successRedirect: "/",
+    successRedirect: "/pharmacies",
     successFlash: "Github log in success!",
     failureRedirect: "/login",
     failureFlash: "Github log in failure"
