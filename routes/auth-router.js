@@ -106,7 +106,8 @@ router.post("/process-signup", (req, res, next) => {
     
     newUser.save((err) => {
         if (err) {
-            console.log("pas marché");
+            console.log("pas marché")
+            console.log(err);
             res.render("auth-views/signup-form", { message: "Something went wrong" });
         } else {
             const link = `http://localhost:3000/confirm/${hashUsername}/${email}`;
