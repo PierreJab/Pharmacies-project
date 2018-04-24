@@ -111,8 +111,9 @@
     height: 10vh;
     margin: 0 1vw;
     border-radius: 0;
-    background-color: #028c97;
-    background-color: #3C3731;
+    /* background-color: #028c97; */
+    background-color: transparent;
+    /* background-color: #3C3731; */
     /* border: none; */
     outline: none;
     color: white;
