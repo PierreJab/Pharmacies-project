@@ -17,7 +17,8 @@
       <nav>
         <div id="home">
           <a href="/">
-            <img src="https://png.icons8.com/metro/1600/pill.png" alt="">
+            {{!-- <img src="https://png.icons8.com/metro/1600/pill.png" alt=""> --}}
+            <img src="https://www.visitgozo.com/wp-content/uploads/2016/09/pharmacy-logo.jpg" alt="">
             Find it
           </a>
         </div>
@@ -56,8 +57,8 @@
           <div class="dropdown">
               <button class="dropbtn">
                 {{#if blahUser}}
-                  {{#if myDetails.profilePicture.secure_url}}
-                      <img class="profile" src="{{myDetails.profilePicture.secure_url}}" alt="">
+                  {{#if blahUser.profilePicture.secure_url}}
+                      <img class="profile" src="{{blahUser.profilePicture.secure_url}}" alt="">
                   {{else}}
                       <img class="profile" src="http://svgur.com/i/jJ.svg" alt="">
                   {{/if}}
