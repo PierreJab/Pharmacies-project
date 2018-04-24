@@ -14,6 +14,10 @@ const storeSchema = new Schema({
     services: {type: Array},
     rating: {type: Number},
     storeImage: {type: String},
+    /* owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }, */
     //uploading userId: 
     reviews: [
         {

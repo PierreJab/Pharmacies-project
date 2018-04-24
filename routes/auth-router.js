@@ -71,13 +71,11 @@ router.post("/process-signup", (req, res, next) => {
         return;
     };
     
-    
-    
-    
+
     const {fullName, email, password} = req.body;
 
     // password can't be blank and requires a number
-    if (password === "" || password.match(/[0-9]/) === null || password.length < 6){
+    if (password.match(/[0-9]/) === null || password.length < 6){
         // "req.flash()" is defined by the "flash" package
         req.flash("error", "Your password must have at least one number and contain 6 characters");
         res.redirect("/signup");
@@ -90,6 +88,7 @@ router.post("/process-signup", (req, res, next) => {
           return;
         };
     });
+
     
     const salt = bcrypt.genSaltSync(10);
     const encryptedPassword = bcrypt.hashSync(password, salt);
@@ -107,10 +106,12 @@ router.post("/process-signup", (req, res, next) => {
     
     newUser.save((err) => {
         if (err) {
+            console.log("pas marché");
             res.render("auth-views/signup-form", { message: "Something went wrong" });
         } else {
             const link = `http://localhost:3000/confirm/${hashUsername}/${email}`;
         
+
         transport.sendMail({
         from: "Find It <website@example.com>",
         to: email,
