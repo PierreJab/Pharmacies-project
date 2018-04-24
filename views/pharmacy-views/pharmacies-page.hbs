@@ -1,0 +1,25 @@
+<div id="layout">
+
+<h2>Pharmacies Database</h2>
+
+
+
+<ul>
+    {{#each storeList}}
+    <li>
+        <h3>{{this.storeName}}</h3>
+        <h4>Phone number: {{this.storePhoneNumber}}</h4>
+        <h4>{{this.storeAddress}}</h4>
+        <h4>{{this.storeCity}}, {{this.storeZip}}</h4>
+        <h4>{{this.storeHours}}</h4>
+        <h4>{{this.rating}}</h4>
+
+    <a href="/pharmacies/{{this._id}}">More Info</a>
+    <a href="/pharmacies/{{this._id}}/edit">Edit</a>
+    </li>
+    {{/each}}
+
+    <a href="/pharmacies/add">Add a Pharmacy</a>
+</ul>
+
+</div>

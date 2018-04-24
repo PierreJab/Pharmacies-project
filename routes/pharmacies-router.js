@@ -19,9 +19,25 @@ const storage = cloudinaryStorage({
   
 const upload = multer({ storage });
 
+//all pharmacies page
+
+router.get("/pharmacies", (req, res, next) => {
+    
+    Store.find()
+    // .populate('storeName')
+    .then((storesFromDb) => {
+            res.locals.storeList = storesFromDb;
+            res.render('pharmacy-views/pharmacies-page');
+        })
+        .catch((err) => {
+            next(err);
+        });
+    });
+
+//add a pharmacy
 
 router.get("/pharmacies/add", (req, res, next) => {
-    res.render("auth-views/add-store");
+    res.render("pharmacy-views/add-store");
 });
 
 router.post("/process-add", upload.single('profilePicture'), (req, res, next) => {
@@ -35,6 +51,25 @@ router.post("/process-add", upload.single('profilePicture'), (req, res, next) =>
         });
     return;
 });
+
+//single pharmacy page by id
+
+router.get("/pharmacies/:id", (req, res, next) => {
+    Store.findById(req.params.storeId)
+    .then((bookDetails) => {
+        // res.locals.store = storeDetails;
+        res.render('pharmacy-views/single-pharmacy-page');
+    })
+    .catch((err) => {
+        next(err);
+    });
+});
+
+//edit pharmacy by id
+
+// router.get("/pharmacies/:id/edit", (req, res, next) => {
+
+// router.get("/process-store-edit")
 
 // router.get("/pharmacies/edit", (req, res, next) => {
 //     res.locals.
