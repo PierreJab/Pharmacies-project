@@ -50,8 +50,8 @@
             | {{blahUser.email}}
 
           {{else}}
-            <button type="button" class="btn btn-default btn-xs"><a href="/login">Log In</a></button>
-            <button type="button" class="btn btn-default btn-xs"><a href="/signup">Sign Up</a></button>
+            <a href="/signup" class="access">Sign Up</a>
+            <a href="/login" class="access">Log in</a>
           {{/if}}
 
           
@@ -70,13 +70,17 @@
               
               </button>
                 <div class="dropdown-content">
+                  {{#if blahUser}}
+                  <a href="/portal"><span class="glyphicon glyphicon-plus-sign"></span>My Portal</a>
+                  <hr>
+                  <a href="/personal/edit"><span class="glyphicon glyphicon-pencil"></span> Edit Profile</a>
+                  <hr>
+                  {{/if}}
                   <a href="/contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
                   <hr>
                   <a href="/About"><span class="glyphicon glyphicon-comment"></span> About</a>
                   <hr>
                   {{#if blahUser}}
-                  <a href="/personal/edit"><span class="glyphicon glyphicon-pencil"></span> Edit profile</a>
-                  <hr>
                   <a href="/logout"><span class="glyphicon glyphicon-remove"></span> Log Out</a>
                   {{/if}}
               

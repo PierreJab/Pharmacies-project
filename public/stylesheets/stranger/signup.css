@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Forum|IBM+Plex+Serif|Maven+Pro|Noto+Serif|Ovo|Quicksand|Roboto');
-
 *{
     /* font-family: 'Forum'; */
 }
-
 #signup {
     margin: 0;
     padding: 0;
@@ -124,7 +122,6 @@
     outline: none;
     color: white;
  }
-
  #signup textarea::-webkit-input-placeholder {
     color: white;
     font-size: 1vh;

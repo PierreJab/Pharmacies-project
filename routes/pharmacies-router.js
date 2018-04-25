@@ -21,8 +21,16 @@ const upload = multer({ storage });
 
 //all pharmacies page
 
-router.get("/pharmacies", (req, res, next) => {
+router.get("/portal", (req, res, next) => {
+    if (req.user){
+        res.render("logged-views/main-page")
+    }
+    else {res.render("auth-views/login-form")}
     
+})
+
+router.get("/portal/pharmacies", (req, res, next) => {
+    if (req.user) {
     Store.find()
     // .populate('storeName')
     .then((storesFromDb) => {
@@ -32,6 +40,8 @@ router.get("/pharmacies", (req, res, next) => {
         .catch((err) => {
             next(err);
         });
+    }
+    else {res.render("auth-views/login-form")}
     });
 
 //add a pharmacy

@@ -494,7 +494,7 @@ router.get("/confirm/:confirmedCode/:email", (req, res, next) => {
 
 router.get("/login", (req, res, next) => {
     res.render("auth-views/login-form");
-});
+    });
 
 
 router.post("/login", passport.authenticate("local", {
