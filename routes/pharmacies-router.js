@@ -22,11 +22,15 @@ const upload = multer({ storage });
 //all pharmacies page
 
 router.get("/portal", (req, res, next) => {
-    if (req.user){
-        res.render("logged-views/main-page")
+    if (!req.user){
+        next("logged-views/main-page")
     }
     else {res.render("auth-views/login-form")}
     
+})
+
+router.get("/portal/maps", (req, res, next) => {
+    if(re)
 })
 
 router.get("/portal/pharmacies", (req, res, next) => {
