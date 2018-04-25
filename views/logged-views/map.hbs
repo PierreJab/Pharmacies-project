@@ -1,29 +1,24 @@
+<div id="maps">
 
-<div id="map">
-    <h2>Search a pharmacy</h2>
+        <h1>Search a pharmacy</h1>
+    <div id="map">
 
-    {{!-- <form action="/process-search" method="GET"> --}}
-    <label>
-        Location:
-        <input type="text" placeholder="Louvre" class="location-input" />
-    </label>
-    <br />
+    
 
-    <!-- these will be set by out Place Autocomplete -->
-    <input type="hidden" name="latitude" class="lat-input" />
-    <input type="hidden" name="longitude" class="lng-input" />
+        <label>
+            <input type="text" placeholder="Search a location" class="location-input" />
+        </label>
+        <br />
 
-    <button id="button">Search</button>
+        <!-- these will be set by out Place Autocomplete -->
+        <input type="hidden" name="latitude" class="lat-input" />
+        <input type="hidden" name="longitude" class="lng-input" />
 
-    {{!-- </form> --}}
+        <button id="button">Search</button>
 
-    <div id="map-canvas"></div>
-    <div class="my-map"></div>
+
+        <div class="my-map"></div>
+    </div>
+
 </div>
 
-
-
-
-
-
-<div class=".second-map"></div>

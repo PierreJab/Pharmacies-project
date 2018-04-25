@@ -1,13 +1,58 @@
+#maps {
+    background-color: #ccc;
+}
+
+
+#maps h1 {
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 15vh;
+
+}
+
 #map .my-map{
+    margin-top: 0vh;
     height: 500px;
-    width: 100vw;
+    width: 70vw;
 }
 
 #map{
-    padding: 15vh 0;
-    /* background-color: red; */
+    padding: 5vh 0;
+    margin-left:30vw;
 }
 
-#map .second-map{
-    height: 500px;;
+#map p{
+    color: white;
+}
+
+#map input[type=text] {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    width: 15vw;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    /* background-color: transparent; */
+    background-color: white;
+    background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png');
+    /* background-image: url("http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png"); */
+    background-position: 0px 0px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    /* outline-color: white; */
+    /* outline-style: solid; */
+}
+
+#map input[type=text]::-webkit-input-placeholder{
+    color: #ccc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* When the input field gets focus, change its width to 100% */
+#map input[type=text]:focus {
+    width: 40vw;
 }

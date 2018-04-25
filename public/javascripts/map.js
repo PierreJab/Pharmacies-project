@@ -4,6 +4,7 @@ const mapDiv = document.querySelector(".my-map");
 
   const map =
   new google.maps.Map(mapDiv, {
+    // scrollwheel: false
     zoom: 12.5,
     center: {
       lat: 48.866667,
@@ -36,11 +37,8 @@ const mapDiv = document.querySelector(".my-map");
     autocomplete.addListener("place_changed", () => {
       const place = autocomplete.getPlace();
       const loc = place.geometry.location;
-      console.log(loc)
       latInput.value = loc.lat();
       lngInput.value = loc.lng();
-      console.log(latInput.value);
-      console.log(lngInput.value);
     });
 
 
@@ -48,6 +46,9 @@ const mapDiv = document.querySelector(".my-map");
 
     var lati = Number(latInput.value);
     var long = Number(lngInput.value);
+
+    map.setCenter({ lat: lati, lng: long});
+ 
     new google.maps.Marker({
         position: {
           lat: lati,
@@ -63,46 +64,47 @@ const mapDiv = document.querySelector(".my-map");
     var request = {
       // location: map.getCenter(),
       location: {lat: lati, lng: long},
-      radius: '500',
+      radius: '1500',
       query: 'pharmacy'
     };
 
     var service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
 
-  // Checks that the PlacesServiceStatus is OK, and adds a marker
-  // using the place ID and location from the PlacesService.
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      var marker = new google.maps.Marker({
-        map: map,
-        place: {
-          placeId: results[0].place_id,
-          location: results[0].geometry.location
-        }
-      });
-      const id = marker.place.placeId;
-      console.log(id);
-    }
-  }
+    // id = callbackback(results, status);
 
-
-    var request = {
-    placeId: id
-  };
+  //   var request = {
+  //   placeId: id
+  // };
 
   service = new google.maps.places.PlacesService(map);
-  service.getDetails(request, callback);
+  service.getDetails({placeId: id}, callback);
 
   function callback(place, status) {
-    console.log('place: ', place[0])
+    console.log('place: ', place)
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       place.forEach((onePlace) => {
         const latitude = onePlace.geometry.viewport.f.f;
         const longitude = onePlace.geometry.viewport.b.b;
 
+        if (onePlace.opening_hours.open_now){
+          var opennn = "Open Now";
+          var color = "green"
+        } else {
+          var opennn = "Closed";
+          var color = "red"
+        }
+
         const content = `<div id="content"> 
-        ${onePlace.formatted_address}
+        <img src="" alt="">
+        <h5 style="text-align: center">${onePlace.name}</h5>
+        ${onePlace.formatted_address} <br/>
+          <div style="display: flex; justify-content: space-evenly; margin: 2vh 0 0 0">
+            <img src="${onePlace.icon }" style="width: 3vw; height: 5vh" alt="">
+            <p style="color: ${color};  font-weight: bold; padding: 2vh 0">${opennn}</p>
+          </div>
+          <p style="text-align: center"><a href="/" >More information</a></p>
+        
         </div>`;
 
         var infowindow = new google.maps.InfoWindow({
@@ -120,6 +122,14 @@ const mapDiv = document.querySelector(".my-map");
             animation: google.maps.Animation.DROP
           });
 
+        // marker.addListener('mouseover', function() {
+        //   infowindow.open(map, marker);
+        // });
+
+        // marker.addListener('mouseout', function() {
+        //   infowindow.close(map, marker);
+        // });
+
         marker.addListener('click', function() {
           infowindow.open(map, marker);
         });
@@ -131,28 +141,25 @@ const mapDiv = document.querySelector(".my-map");
 
   };
 
+
+   // Checks that the PlacesServiceStatus is OK, and adds a marker
+  // using the place ID and location from the PlacesService.
+  function callbackback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      var marker = new google.maps.Marker({
+        map: map,
+        place: {
+          placeId: results[0].place_id,
+          location: results[0].geometry.location
+        }
+      });
+      const id = marker.place.placeId;
+    }
+    return results[0].place_id
+  }
+
   
    
-  
-
-  // const Pharmacies = new google.maps.places.Autocomplete(locationInput, options)
-
-
-
-
-// Calling the function
-// google.maps.event.addDomListener(window, 'load', initialize);
-
-// ---------- Adding a marker ! ----------//
-// new google.maps.Marker({
-//   position: {
-//     lat: 48.866667,
-//     lng: 2.333333
-//   },
-//   map: map,
-//   title: "Paris, France",
-//   animation: google.maps.Animation.DROP
-// });
 
 
 
@@ -182,69 +189,8 @@ const mapDiv = document.querySelector(".my-map");
 /* ------------------------------------------------- */
 
 
-/* 
-function initialize() {
-  var pyrmont = new google.maps.LatLng(48.866667, 2.333333); // Paris
+/*
 
-  var map = new google.maps.Map(document.querySelector(".my-map"), {
-    center: pyrmont,
-    zoom: 12,
-    // scrollwheel: false
-  });
-
-  // Specify location, radius and place types for your Places API search.
-  var request = {
-    location: pyrmont,
-    radius: '7500',
-    types: ['pharmacy']
-  };
-
-  // Create the PlaceService and send the request.
-  // Handle the callback with an anonymous function.
-  var service = new google.maps.places.PlacesService(map);
-  // var short = google.maps.places.RankBy.DISTANCE(map);
-  // console.log(short);
-  service.nearbySearch(request, function(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        // If the request succeeds, draw the place location on
-        // the map as a marker, and register an event to handle a
-        // click on the marker.
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location,
-          animation: google.maps.Animation.DROP
-        });
-      }
-    }
-  });
-
-  service.getDetails(request, (details) => {
-    console.log(details);
-  });
-
-
-
-
-
-
-
-
-
-
-
-  navigator.geolocation.getCurrentPosition((result) => {
-    const { latitude, longitude } = result.coords;
-  
-    map.setCenter({ lat: latitude, lng: longitude });
-    new google.maps.Marker({
-      position: { lat: latitude, lng: longitude },
-      map: map,
-      title: "Your Location",
-      animation: google.maps.Animation.DROP
-    });
-  });
   
   // retrieve restaurant data from our backend
   axios.get("/resto/data")
@@ -294,10 +240,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
+/* 
 
 
-
-/* var map;
+var map;
 
 function initialize() {
   // Create a map centered in Pyrmont, Sydney (Australia).
@@ -334,11 +280,11 @@ function callback(results, status) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
  */
-
-
-
-
 
 
 
