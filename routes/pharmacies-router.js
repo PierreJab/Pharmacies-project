@@ -29,9 +29,6 @@ router.get("/portal", (req, res, next) => {
     
 })
 
-router.get("/portal/maps", (req, res, next) => {
-    if(re)
-})
 
 router.get("/portal/pharmacies", (req, res, next) => {
     if (req.user) {
