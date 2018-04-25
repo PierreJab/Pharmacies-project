@@ -1,22 +1,59 @@
 <div id="pharmacy-pages">
 
-<div class = "container">
+<br>
+<br>
 
-        <h3>Learn more about {{Store.storeName}}</h3>
-        <h4>Phone number: {{Store.storePhoneNumber}}</h4>
-        
-        <h4>Prescriptions offered: {{Store.prescriptions}}</h4>
-        <h4>Pharmacy licenses: {{Store.licenses}}</h4>
-        <h4>Services offered: {{Store.services}}</h4>
+<div class="container">
+<div class = "table-responsive">
+    <table class="table">
+<h2>More information about {{Store.storeName}}</h2>
 
-        <h4>Address:{{Store.storeAddress}}</h4>
-        <h4>{{Store.storeCity}}, {{this.storeZip}}</h4>
-        <h4>{{Store.storeCountry}}</h4>
-        <h4>Operating hours: {{Store.storeHours}}</h4>
-        <h4>Rating: {{Store.rating}}</h4>
-        <h4>Reviews:</h4>
-        <!--Submit rating -->
+    
+    <tr>
+        <th>Store Address:</th>
+        <td>{{Store.storeAddress}}<br>{{Store.storeCity}} {{Store.storeZip}}<br>{{Store.storeCountry}}</td>
+    </tr>
+    <tr>
+        <th>Phone Number:</th>
+        <td>{{Store.storePhoneNumber}}</td>
+    </tr>
+    <tr>
+        <th>Store Hours:</th>
+        <td>{{Store.storeHours}}</td>
+    </tr>
 
+    <tr>
+        <th>Licenses:</th>
+        <td>{{Store.storeLicenses}}</td>
+    </tr>
+    <tr>
+        <th>Prescriptions:</th>
+        <td>{{Store.storePrescriptions}}</td>
+    </tr>
+    <tr>
+        <th>Services:</th>
+        <td>{{Store.storeServices}}</td>
+    </tr>
+    </table>
+
+</div>
+</div>
+
+<div class="container-one">
+    <div class = "table-responsive">
+    <table class="table">
+    <h2>User feedback</h2>
+<tr>
+    <th>Average rating:</th>
+    <td>{{Store.rating}}</td>
+</tr>
+<tr>
+    <th>User reviews:</th>
+    <td>{{Store.reviews}}</td>
+</tr>
+
+</div>
+</table>
 </div>
 
 <button>Claim as Owner</button>

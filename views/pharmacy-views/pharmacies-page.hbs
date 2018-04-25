@@ -1,29 +1,49 @@
 <div id="pharmacy-pages">
 
-<h2>Pharmacies Database</h2>
+<br>
+<br>
+	<ul class="nav nav-tabs">
+	<li><a href="/portal">My portal</a></li>
+	<li><a href="/maps">Find pharmacies near me</a></li>
+	<li class="active"><a href="/pharmacies">Our database</a></li>
+	</ul>
 
-<div class = "left-side"
+<div class="table-responsive">
+    
 
-<ul>
+    <table class="table">
+        <h2>Pharmacies</h2>
+    <ul>
+        <tr class="stores">
+            <th>Store Name</th>
+            <th>Phone Number</th>
+            <th>Store Address</th>
+            <th>Prescriptions</th>
+            <th>User Rating</th>
+        </tr>
     {{#each storeList}}
-    <li>
-        <h3>{{this.storeName}}</h3>
-        <h4>Phone number: {{this.storePhoneNumber}}</h4>
-        <h4>{{this.storeAddress}}</h4>
-        <h4>{{this.storeCity}}, {{this.storeZip}}</h4>
-        <h4>{{this.storeHours}}</h4>
-        <h4>{{this.rating}}</h4>
+        <tr class="stores">
+            <td><a href="/pharmacies/{{this._id}}">{{this.storeName}}</a><br>
+            <button type="button" class="btn btn-default btn-xs"><a href="/pharmacies/{{this._id}}">More Info</a></button></td>
+            <td>{{this.storePhoneNumber}}</td>
+            <td>{{this.storeAddress}}<br>{{this.storeCity}} {{this.storeZip}}</td>
+            <td>{{this.prescriptions}}</td>
+            <td>{{this.rating}}</td>
 
-    <a href="/pharmacies/{{this._id}}">More Info</a>
-    <a href="/pharmacies/{{this._id}}/edit">Edit</a>
-    </li>
+        </div>
     {{/each}}
 
-    <a href="/pharmacies/add">Add a Pharmacy</a>
-    <a href="/">Go Home</a>
+
+
+
 </ul>
+    </table>
+
+<button type="button" class="btn btn-info add"><a href="/pharmacies/add">Add a Pharmacy</a></button>
 
 </div>
+    <button type="button" class="btn btn-info"><a href="/pharmacies/add">Add a Pharmacy</a></button>
+    <button type="button" class="btn btn-info"><a href="/">Go Home</a></button>
 
 </div>
 
