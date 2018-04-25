@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user-model");
 
-router.get("/maps", (req, res, next) => {
+router.get("/portal/maps", (req, res, next) => {
+    if (!req.user){
+        next();
+    }
     res.render("logged-views/map");
 })
 
