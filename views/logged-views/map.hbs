@@ -1,0 +1,29 @@
+
+<div id="map">
+    <h2>Search a pharmacy</h2>
+
+    {{!-- <form action="/process-search" method="GET"> --}}
+    <label>
+        Location:
+        <input type="text" placeholder="Louvre" class="location-input" />
+    </label>
+    <br />
+
+    <!-- these will be set by out Place Autocomplete -->
+    <input type="hidden" name="latitude" class="lat-input" />
+    <input type="hidden" name="longitude" class="lng-input" />
+
+    <button id="button">Search</button>
+
+    {{!-- </form> --}}
+
+    <div id="map-canvas"></div>
+    <div class="my-map"></div>
+</div>
+
+
+
+
+
+
+<div class=".second-map"></div>
