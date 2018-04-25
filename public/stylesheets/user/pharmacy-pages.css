@@ -1,0 +1,17 @@
+h2{
+    text-align: center;
+}
+
+#pharmacy-pages{
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+}
+
+.table-responsive{
+    background:#339999;
+    width: 80vw;
+    margin: .5em 5em 2em;
+}
+
+.add{
+margin: 0 auto;
+}

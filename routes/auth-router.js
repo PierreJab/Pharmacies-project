@@ -498,7 +498,7 @@ router.get("/login", (req, res, next) => {
 
 
 router.post("/login", passport.authenticate("local", {
-    successRedirect: "/pharmacies",
+    successRedirect: "/portal",
     failureRedirect: "/auth-views/login",
     failureFlash: true,
     passReqToCallback: true
@@ -526,7 +526,7 @@ router.post("/process-login", (req, res, next) => {
             // "req.login()" is Passport's method for logging a user in
             req.flash("success", "Log in successful!");
             req.login(userDetails, (userDetails) => {
-                res.redirect("/pharmacies");
+                res.redirect("/portal");
             });
             
         })
@@ -551,7 +551,7 @@ router.get("/google/login",
     }));
 router.get("/google/success", 
     passport.authenticate("google", {
-        successRedirect: "/pharmacies",
+        successRedirect: "/portal",
         successFlash: "Google log in success!",
         failureRedirect: "/login",
         failureFlash: "Google log in failure."
