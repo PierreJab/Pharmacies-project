@@ -22,16 +22,18 @@ const upload = multer({ storage });
 //all pharmacies page
 
 router.get("/portal", (req, res, next) => {
-    if (req.user){
-        res.render("logged-views/main-page")
+    if (!req.user){
+        next();
     }
-    else {res.render("auth-views/login-form")}
+    res.render("logged-views/main-page")
     
 })
 
 
 router.get("/portal/pharmacies", (req, res, next) => {
-    if (req.user) {
+    if (!req.user){
+        next();
+    }
     Store.find()
     // .populate('storeName')
     .then((storesFromDb) => {
@@ -41,13 +43,29 @@ router.get("/portal/pharmacies", (req, res, next) => {
         .catch((err) => {
             next(err);
         });
-    }
-    else {res.render("auth-views/login-form")}
     });
+
+    router.get("/pharmacies", (req, res, next) => {
+        if (!req.user){
+            next();
+        }
+        Store.find()
+        // .populate('storeName')
+        .then((storesFromDb) => {
+                res.locals.storeList = storesFromDb;
+                res.render('pharmacy-views/pharmacies-page');
+            })
+            .catch((err) => {
+                next(err);
+            });
+    })
 
 //add a pharmacy
 
 router.get("/pharmacies/add", (req, res, next) => {
+    if (!req.user){
+        next();
+    }
     res.render("pharmacy-views/add-store");
 });
 
@@ -55,7 +73,7 @@ router.post("/process-add", upload.single('profilePicture'), (req, res, next) =>
     const { storeName, storeAddress, storeZip, storeCity, storeCountry, storePhoneNumber, prescriptions, licenses, services, storeImage } = req.body;
     Store.create({storeName, storeAddress, storeZip, storeCity, storeCountry, storePhoneNumber, prescriptions, licenses, services, storeImage})
         .then(() => {
-            res.redirect("/pharmacies")
+            res.redirect("/portal/pharmacies")
         })
         .catch((err) => {
             next(err);
@@ -76,6 +94,16 @@ router.get("/pharmacies/:id", (req, res, next) => {
         next(err);
     });
 });
+
+router.get("/pharmacies/delete", (req, res, next) => {
+    Store.findByIdAndRemove(req.params.id)
+    .then(() => {
+        res.redirect('/portal/pharmacies')
+    })
+    .catch((err) => {
+        next(err);
+    });
+    });
 
 //edit pharmacy by id
 

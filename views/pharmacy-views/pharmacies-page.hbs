@@ -23,7 +23,7 @@
         </tr>
     {{#each storeList}}
         <tr class="stores">
-            <td><a href="/pharmacies/{{this._id}}">{{this.storeName}}</a><br>
+            <td><strong>{{this.storeName}}</strong><br>
             <button type="button" class="btn btn-default btn-xs"><a href="/pharmacies/{{this._id}}">More Info</a></button></td>
             <td>{{this.storePhoneNumber}}</td>
             <td>{{this.storeAddress}}<br>{{this.storeCity}} {{this.storeZip}}</td>
@@ -38,12 +38,11 @@
 
 </ul>
     </table>
-
+<div class="buttons">
 <button type="button" class="btn btn-info add"><a href="/pharmacies/add">Add a Pharmacy</a></button>
+</div>
 
 </div>
-    <button type="button" class="btn btn-info"><a href="/pharmacies/add">Add a Pharmacy</a></button>
-    <button type="button" class="btn btn-info"><a href="/">Go Home</a></button>
 
 </div>
 

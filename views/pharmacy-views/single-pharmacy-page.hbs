@@ -1,12 +1,37 @@
 <div id="pharmacy-pages">
 
-<br>
-<br>
 
-<div class="container">
+<ul class="nav nav-tabs">
+	<li><a href="/portal">Portal Home</a></li>
+	<li><a href="/portal/pharmacies">Go Back</a></li>
+	<li><a href="/portal/maps">Map</a></li>
+	</ul>
+
+    <div class="container">
+
+        <div class = "table-responsive">
+        <table class="table">
+            <h2>User feedback about {{Store.storeName}}</h2>
+        <tr>
+        <th>Average rating:</th>
+        <td>{{Store.rating}}</td>
+        </tr>
+        <tr>
+        <th>User reviews:</th>
+        <td>{{Store.reviews}}</td>
+        </tr>
+
+
+    </div>
+
+</table>
+<div class="buttons">
+<button type="button" class="btn btn-info"><a href="/">Add to Favorites</a></button>
+</div>
+</div>
 <div class = "table-responsive">
     <table class="table">
-<h2>More information about {{Store.storeName}}</h2>
+<h2>More information</h2>
 
     
     <tr>
@@ -35,46 +60,9 @@
         <td>{{Store.storeServices}}</td>
     </tr>
     </table>
+    <div class="buttons">
+    <button type="button" class="btn btn-info"><a href="/">Edit Details</a></button>
+    <button type="button" class="btn btn-info"><a href="/pharmacies/{{this.id}}/delete">Delete</a></button>
+    </div>
 
 </div>
-</div>
-
-<div class="container-one">
-    <div class = "table-responsive">
-    <table class="table">
-    <h2>User feedback</h2>
-<tr>
-    <th>Average rating:</th>
-    <td>{{Store.rating}}</td>
-</tr>
-<tr>
-    <th>User reviews:</th>
-    <td>{{Store.reviews}}</td>
-</tr>
-
-</div>
-</table>
-</div>
-
-<button>Claim as Owner</button>
-<button>Add to Favorites</button>
-<a href='/pharmacies'>Go Back</a>
-
-<!--
-            <h3>{{this.storeName}}</h3>
-        <h4>Phone number: {{this.storePhoneNumber}}</h4>
-        
-        <h4>Prescriptions offered: {{this.prescriptions}}</h4>
-        <h4>Pharmacy licenses: {{this.licenses}}</h4>
-        <h4>{{this.services}}</h4>
-
-        <h4>{{this.storeAddress}}</h4>
-        <h4>{{this.storeCity}}, {{this.storeZip}}</h4>
-        <h4>{{this.storeCountry}}</h4>
-        <h4>{{this.storeHours}}</h4>
-        <h4>{{this.rating}}</h4>
-        <h4>Reviews:</h4>
-
-    <a href="/pharmacies/{{this._id}}">More Info</a>
-    <a href="/pharmacies/{{this._id}}/edit">Edit</a>
-    -->

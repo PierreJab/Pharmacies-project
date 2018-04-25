@@ -18,3 +18,9 @@
 #pharmacy-pages .add{
 margin: 0 auto;
 }
+
+#pharmacy-pages .buttons {
+    text-align: center;
+    margin-top: 1em;
+}
+

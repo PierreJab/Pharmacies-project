@@ -560,7 +560,7 @@ router.get("/google/success",
 
 router.get("/github/login", passport.authenticate("github"));
 router.get("/github/success", passport.authenticate("github", {
-    successRedirect: "/pharmacies",
+    successRedirect: "/portal",
     successFlash: "Github log in success!",
     failureRedirect: "/login",
     failureFlash: "Github log in failure"
