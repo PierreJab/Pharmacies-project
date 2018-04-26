@@ -17,7 +17,7 @@ const flash        = require('flash');
 mongoose.Promise = Promise;
 mongoose
   // .connect('mongodb://localhost/lab-passport-roles', {useMongoClient: true})
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/lab-passport-roles')
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
