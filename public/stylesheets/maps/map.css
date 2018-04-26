@@ -1,6 +1,7 @@
 #maps {
     background-color: #ccc;
     min-height: 100vh;
+    /* max-height:100vh; */
 }
 
 #maps .nav{
@@ -11,20 +12,85 @@
     color: white;
     text-align: center;
     margin-top: 0;
-    padding-top: 15vh;
+    padding-top: 3vh;
 
 }
+
 
 #map .my-map{
     margin-top: 0vh;
     height: 500px;
     width: 70vw;
+    margin-bottom: 0;
 }
 
 #map{
-    padding: 5vh 0;
-    margin-left:30vw;
+    padding: 5vh 0 0 0;
+    display: flex;
+    justify-content: space-between
 }
+
+#maps #map ul{
+    margin: 0;
+    padding: 0;
+}
+
+#maps #map li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: black;
+    font-size: 1vh;
+}
+
+#maps #map li:hover{
+    background-color: whitesmoke
+}
+
+#maps #map li hr{
+    margin: 0;
+    padding: 0;
+}
+
+#maps #map li .name{
+    color: black;
+    font-size: 2vh;
+    font-weight: bold;
+    margin: 0;
+    padding: 1vh 3vh;
+    text-align: left;
+}
+
+#maps #map li .address{
+    color: black;
+    font-size: 2vh;
+    margin: 0;
+    padding: 1vh 3vh;
+    text-align: left;
+}
+
+#maps #map li .open{
+    color: black;
+    font-size: 2vh;
+    margin: 0;
+    padding: 1vh 3vh;
+    text-align: left;
+}
+
+#maps #map li h2{
+    margin: 0;
+    padding:0;
+}
+
+
+#maps #map #listPharmacies{
+    min-width: 20vw;
+    max-height: 500px;
+    overflow-y: scroll;
+    width: 30vw;
+    border: 1px solid white;
+}
+
 
 #map p{
     color: white;
@@ -78,3 +144,6 @@
 #maps .search button:hover{
     background-color: whitesmoke
 }
+
+
+

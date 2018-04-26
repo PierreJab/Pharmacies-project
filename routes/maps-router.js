@@ -17,12 +17,12 @@ router.get("/portal/maps", (req, res, next) => {
 router.post("/pharmacy/process-one-pharmacy", (req, res, next) => {
     // place_id = req.params.id;
     // console.log(place_id);
-    const {onePlace} = req.body;
+    const {name, formatted_address} = req.body;
     // onePlace = JSON.parse(onePlace)
     // console.log("one place:", onePlace.formatted_address);
     // res.send(JSON.stringify(req.body.onePlace));
     // res.send(JSON.parse(req.body))
-    res.json(req.body);
+    res.send(req.body)
     // console.log(onePlace[0])
     // res.locals.pharmacy = onePlace;
     // res.render("pharmacy-views/one-pharmacy");
