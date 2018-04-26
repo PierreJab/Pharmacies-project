@@ -5,6 +5,11 @@
     padding: 15vh 0;
 }
 
+.nav-tabs a{
+    text-decoration: none;
+    color: black;
+}
+
 #pharmacy-pages h2{
     text-align: center;
 }
