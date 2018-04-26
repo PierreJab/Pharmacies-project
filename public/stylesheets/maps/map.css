@@ -1,5 +1,6 @@
 #maps {
     background-color: #ccc;
+    min-height: 100vh;
 }
 
 
@@ -26,10 +27,11 @@
     color: white;
 }
 
-#map input[type=text] {
+#maps input[type=text] {
     font-family: 'Courier New', Courier, monospace;
     color: black;
-    width: 15vw;
+    width: 20vw;
+    margin-left: 30vw;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -47,12 +49,29 @@
     /* outline-style: solid; */
 }
 
-#map input[type=text]::-webkit-input-placeholder{
+#maps input[type=text]::-webkit-input-placeholder{
     color: #ccc;
     font-family: 'Courier New', Courier, monospace;
 }
 
 /* When the input field gets focus, change its width to 100% */
-#map input[type=text]:focus {
+#maps input[type=text]:focus {
     width: 40vw;
+}
+
+
+#maps .search button {
+    background-color: white;
+    border: 2px solid #ccc;
+    /* background-color: transparent;
+    border: 2px solid white;
+    color: white; */
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px 20px 14px 20px;
+    margin-top: 0px;
+}
+
+#maps .search button:hover{
+    background-color: whitesmoke
 }

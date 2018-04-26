@@ -42,7 +42,7 @@ const mapDiv = document.querySelector(".my-map");
     });
 
 
-  document.querySelector("#button").onclick = function (){
+  document.querySelector(".search button").onclick = function (){
 
     var lati = Number(latInput.value);
     var long = Number(lngInput.value);
@@ -56,10 +56,13 @@ const mapDiv = document.querySelector(".my-map");
         },
         map: map,
         title: locationInput.value,
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+        animation: google.maps.Animation.BOUNCE,
       })
 
     
+      
+
     // Search for Pharmacy around the selected point in Paris.
     var request = {
       // location: map.getCenter(),
@@ -84,6 +87,7 @@ const mapDiv = document.querySelector(".my-map");
     console.log('place: ', place)
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       place.forEach((onePlace) => {
+        console.log(onePlace);
         const latitude = onePlace.geometry.viewport.f.f;
         const longitude = onePlace.geometry.viewport.b.b;
 
@@ -103,8 +107,11 @@ const mapDiv = document.querySelector(".my-map");
             <img src="${onePlace.icon }" style="width: 3vw; height: 5vh" alt="">
             <p style="color: ${color};  font-weight: bold; padding: 2vh 0">${opennn}</p>
           </div>
-          <p style="text-align: center"><a href="/" >More information</a></p>
-        
+          
+          <form action="/pharmacy/process-one-pharmacy" method="POST"">
+          <input type="hidden" name="onePlace" value="${onePlace}" />
+          <p style="text-align: center"><button style="color: black"> More information</button></p>
+          </form>
         </div>`;
 
         var infowindow = new google.maps.InfoWindow({
@@ -134,7 +141,18 @@ const mapDiv = document.querySelector(".my-map");
           infowindow.open(map, marker);
         });
 
+      var information = `<li>
+        <h2>${onePlace.name}
+        <p>${onePlace.formatted_address}</p>
+        <p>${opennn}</p>
+        </li>
+      `;
+      document.querySelector(".list").append(information);
+      // $( "#maps .list" ).append(content);
+
       });
+
+
     };
   }
 
@@ -161,28 +179,6 @@ const mapDiv = document.querySelector(".my-map");
   
    
 
-
-
-
-// DATA FROM BACKEND
-// // retrieve restaurant data from our backend
-// axios.get("/resto/data")
-//   .then((response) => {
-//     const restoList = response.data;
-
-//     restoList.forEach((oneResto) => {
-//       const [ lat, lng ] = oneResto.location.coordinates;
-//       new google.maps.Marker({
-//         position: { lat, lng },
-//         map: map,
-//         title: oneResto.name,
-//         animation: google.maps.Animation.DROP
-//       });
-//     });
-//   })
-//   .catch((err) => {
-//     alert("Something went wrong! 💩");
-//   });
 
 
 
