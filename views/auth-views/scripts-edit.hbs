@@ -1,0 +1,27 @@
+<div id="edit">
+
+    <div class="form">
+
+
+        <h2>Edit my prescriptions</h2>
+
+
+        <div id="info">
+
+            <form action="/process-edit/{{myDetails._id}}" method="POST" enctype="multipart/form-data">
+
+                <label>
+                    <p>Prescriptions:</p>
+                    <input type="text" name="prescriptions" value="{{myDetails.prescriptions}}" placeholder="Enter your prescriptions (separated by commas)">
+                </label>
+
+                <button type="button" class="btn btn-info btn-xs"><a href="/personal/edit">Add</a></button>
+            </form>
+
+        </div>
+
+    
+    
+
+    </div>
+</div>

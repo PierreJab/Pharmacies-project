@@ -25,7 +25,13 @@ router.get("/portal", (req, res, next) => {
     if (!req.user){
         next();
     }
-    res.render("logged-views/main-page")
+    User.find()
+    .then((usersFromDb) => {
+        let userList = usersFromDb;
+        //res.locals.userList = usersFromDb;
+        res.render("logged-views/main-page", {userList})
+    })
+
     
 })
 

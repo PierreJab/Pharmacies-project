@@ -24,3 +24,9 @@ margin: 0 auto;
     margin-top: 1em;
 }
 
+#pharmacy-pages .lists {
+background-color: limegreen;
+text-align: center;
+color: white;
+width: 10vh;
+}

@@ -566,7 +566,10 @@ router.get("/github/success", passport.authenticate("github", {
     failureFlash: "Github log in failure"
 }));
 
-
+router.get("/prescriptions/edit", (req, res, next) => {
+    res.locals.myDetails = req.user;
+    res.render("auth-views/scripts-edit");
+});
 
 router.get("/personal/edit", (req, res, next) => {
     res.locals.myDetails = req.user;
@@ -581,7 +584,7 @@ router.post("/process-edit/:id", upload.single('profilePicture'), (req, res, nex
     console.log("im here");
 
     id = req.params.id;
-    const {fullName, email, birthday, phone, address, zip, city, country, aboutMe} = req.body;
+    const {fullName, email, birthday, phone, address, zip, city, country, aboutMe, prescriptions, services} = req.body;
     // const {profilePicture} = req.file;
     console.log(req.file);
     const {originalname, secure_url} = req.file;
@@ -602,6 +605,8 @@ router.post("/process-edit/:id", upload.single('profilePicture'), (req, res, nex
             city, 
             country, 
             aboutMe,
+            prescriptions,
+            services,
             profilePicture: {
                 originalname, 
                 secure_url
@@ -610,7 +615,7 @@ router.post("/process-edit/:id", upload.single('profilePicture'), (req, res, nex
         .then(() => {
             console.log("updated");
             req.flash("success", "Information saved!");
-            res.redirect("/personal/edit");
+            res.redirect("/portal");
         })
         .catch((err) => {
             next(err);

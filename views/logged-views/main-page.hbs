@@ -8,38 +8,48 @@
 
 	</ul>
 
-	<div class="table">
-
-	<table class = "table-bordered">
-
-	<ul>
-		<tr class="portal-tab">
-			<th>Favorite Stores</th>
-			{{#each userList}}
-			<td>{{this.favorites}}</td>
-			{{/each}}
-		</tr>
-	</ul>
+<div class="container">
+	<h2>Favorites</h2>
+	<p>A list of your favorite pharmacies</p>
+	<table class="table responsive">
+		<tbody class="lists">
+			<tr>
+				{{#each userList}}
+				<td>{{this.favorites}}</td>
+				{{/each}}
+			</tr>
+		</tbody>
 	</table>
+</div>
 
-	<table class="table-bordered">
-	<ul>
-		<tr class="portal-tab"></tr>
-			<th>Prescriptions</th>
-			{{#each userList}}
-			<td>{{this.prescriptions}}</td>
-			{{/each}}
-	</ul>
+<div class="container">
+	<h2>Prescriptions</h2>
+	<p>Keep track of your prescriptions</p>
+	<table class="table responsive">
+		<tbody class="lists">
+			<tr>
+				{{#each userList}}
+				<td>{{this.prescriptions}}</td>
+				{{/each}}
+			</tr>
+		</thead>
 	</table>
+	<button type="button" class="btn btn-default btn-xs"><a href="/prescriptions/edit">Add Prescriptions</a></button>
+</div>
 
-	<table class="table-bordered">
-	<ul>
-		<tr class="portal-tab"></tr>
-			<th>Services</th>
-			{{#each userList}}
-			<td>{{this.services}}</td>
-			{{/each}}
-	</ul>
+<div class="container">
+	<h2>Services</h2>
+	<p>The services that you require most frequently</p>
+	<table class="table responsive">
+		<tbody class="lists">
+			<tr>
+				{{#each userList}}
+				<td>{{this.services}}</td>
+				{{/each}}
+			</tr>
+		</thead>
 	</table>
-	</div>
+	<button type="button" class="btn btn-default btn-xs"><a href="/services/edit">Add Services</a></button>
+</div>
+
 </div>
