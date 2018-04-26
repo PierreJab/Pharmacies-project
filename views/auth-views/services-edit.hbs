@@ -3,16 +3,16 @@
     <div class="form">
 
 
-        <h2>Edit my prescriptions</h2>
+        <h2>Edit my services</h2>
 
 
         <div id="info">
 
-            <form action="/scripts-edit/{{myDetails._id}}" method="POST" enctype="multipart/form-data">
+            <form action="/services-edit/{{myDetails._id}}" method="POST" enctype="multipart/form-data">
 
                 <label>
-                    <p>Prescriptions:</p>
-                    <input type="text" name="prescriptions" value="{{myDetails.prescriptions}}" placeholder="Enter your prescriptions (separated by commas)">
+                    <p>Services:</p>
+                    <input type="text" name="prescriptions" value="{{myDetails.prescriptions}}" placeholder="Enter the services you require most frequently (separated by commas)">
                 </label>
                 <a href="/portal"><button type="button" class="btn btn btn-xs edit-button">Back</button></a>
                 <button type="submit" class="btn btn btn-xs">Add</button>

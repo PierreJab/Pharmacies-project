@@ -566,9 +566,48 @@ router.get("/github/success", passport.authenticate("github", {
     failureFlash: "Github log in failure"
 }));
 
+router.get("/services/edit", (req, res, next) => {
+    res.locals.myDetails = req.user;
+    res.render("auth-views/services-edit");
+})
+
+router.post("/services-edit/:iz", (req, res, next) => {
+    const id = req.params.id;
+    const {services} = req.body;
+    User.findByIdAndUpdate(id, {
+        services
+    })
+    .then(() => {
+        //console.log("updated");
+        req.flash("success", "Information saved!");
+        res.redirect("/portal");
+    })
+    .catch((err) => {
+        next(err);
+    })
+});
+
 router.get("/prescriptions/edit", (req, res, next) => {
     res.locals.myDetails = req.user;
     res.render("auth-views/scripts-edit");
+});
+
+router.post("/scripts-edit/:id", (req, res, next) => {
+    console.log(req.user);
+    const id = req.params.id;
+    const {prescriptions} = req.body;
+    
+
+    User.findByIdAndUpdate(id)
+    .then((user) => {
+        console.log("updated");
+        //user.prescriptions =;
+        req.flash("success", "Information saved!");
+        res.redirect("/portal");
+    })
+    .catch((err) => {
+        next(err);
+    })
 });
 
 router.get("/personal/edit", (req, res, next) => {

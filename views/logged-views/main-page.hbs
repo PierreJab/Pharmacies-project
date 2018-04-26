@@ -8,36 +8,36 @@
 
 	</ul>
 
-<div class="container">
+<div class="container col-lg-4">
 	<h2>Favorites</h2>
 	<p>A list of your favorite pharmacies</p>
 	<table class="table responsive">
 		<tbody class="lists">
 			<tr>
 				{{#each userList}}
-				<td>{{this.favorites}}</td>
+					<td>{{this.favorites.name}}</td>
 				{{/each}}
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-<div class="container">
+<div class="container col-md-4">
 	<h2>Prescriptions</h2>
 	<p>Keep track of your prescriptions</p>
-	<table class="table responsive">
+	<table class="table responsive shrink">
 		<tbody class="lists">
 			<tr>
 				{{#each userList}}
-				<td>{{this.prescriptions}}</td>
+					<td>{{this.prescriptions}}</td>
 				{{/each}}
 			</tr>
-		</thead>
+		</tbody>
 	</table>
 	<button type="button" class="btn btn-default btn-xs"><a href="/prescriptions/edit">Add Prescriptions</a></button>
 </div>
 
-<div class="container">
+<div class="container col-lg-4">
 	<h2>Services</h2>
 	<p>The services that you require most frequently</p>
 	<table class="table responsive">

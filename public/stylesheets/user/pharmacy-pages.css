@@ -25,12 +25,19 @@ margin: 0 auto;
 }
 
 #pharmacy-pages .lists {
-background-color: limegreen;
+background-color: navy;
 text-align: center;
 color: white;
-width: 10vh;
 }
 
 #pharmacy-pages{
     min-height: 100vh;
+}
+
+#pharmacy-pages .shrink{
+    width: 10vw;
+}
+
+#pharmacy-pages .edit-button{
+    text-decoration: none;
 }
