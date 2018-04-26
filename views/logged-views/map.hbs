@@ -1,24 +1,34 @@
 <div id="maps">
 
         <h1>Search a pharmacy</h1>
+        <label class="search">
+            <input type="text" placeholder="Search a location" class="location-input" />
+            <button>Search</button>
+        </label>
+        <br />
     <div id="map">
 
     
 
-        <label>
-            <input type="text" placeholder="Search a location" class="location-input" />
-        </label>
-        <br />
 
         <!-- these will be set by out Place Autocomplete -->
         <input type="hidden" name="latitude" class="lat-input" />
         <input type="hidden" name="longitude" class="lng-input" />
 
-        <button id="button">Search</button>
+        
 
 
         <div class="my-map"></div>
     </div>
 
+
+    <div>
+        <ul class="list">
+
+        </ul>
+    </div>
+
 </div>
+
+
 

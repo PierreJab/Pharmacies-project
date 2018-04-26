@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -16,7 +16,8 @@ const flash        = require('flash');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/lab-passport-roles', {useMongoClient: true})
+  // .connect('mongodb://localhost/lab-passport-roles', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
