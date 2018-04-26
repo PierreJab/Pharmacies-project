@@ -19,7 +19,7 @@ const storage = cloudinaryStorage({
   
 const upload = multer({ storage });
 
-//all pharmacies page
+//portal main page
 
 router.get("/portal", (req, res, next) => {
     if (!req.user){
@@ -29,6 +29,10 @@ router.get("/portal", (req, res, next) => {
     
 })
 
+//portal edit prescriptions
+//portal edit services
+
+//all pharmacies
 
 router.get("/portal/pharmacies", (req, res, next) => {
     if (!req.user){
@@ -95,24 +99,23 @@ router.get("/pharmacies/:id", (req, res, next) => {
     });
 });
 
-router.get("/pharmacies/delete", (req, res, next) => {
-    Store.findByIdAndRemove(req.params.id)
-    .then(() => {
-        res.redirect('/portal/pharmacies')
-    })
-    .catch((err) => {
-        next(err);
-    });
-    });
+//delete??
 
-//edit pharmacy by id
+// router.get("/pharmacies/delete", (req, res, next) => {
+//     Store.findByIdAndRemove(req.params.id)
+//     .then(() => {
+//         res.redirect('/portal/pharmacies')
+//     })
+//     .catch((err) => {
+//         next(err);
+//     });
+//     });
 
-// router.get("/pharmacies/:id/edit", (req, res, next) => {
+//leave a review
 
-// router.get("/process-store-edit")
-
-// router.get("/pharmacies/edit", (req, res, next) => {
-//     res.locals.
-// })
+router.get("/pharmacies/review", (req, res, next) => {
+    res.locals.storeDetails=req.store;
+    res.render("pharmacy-views/review-form");
+})
 
 module.exports = router

@@ -8,4 +8,38 @@
 
 	</ul>
 
+	<div class="table">
+
+	<table class = "table-bordered">
+
+	<ul>
+		<tr class="portal-tab">
+			<th>Favorite Stores</th>
+			{{#each userList}}
+			<td>{{this.favorites}}</td>
+			{{/each}}
+		</tr>
+	</ul>
+	</table>
+
+	<table class="table-bordered">
+	<ul>
+		<tr class="portal-tab"></tr>
+			<th>Prescriptions</th>
+			{{#each userList}}
+			<td>{{this.prescriptions}}</td>
+			{{/each}}
+	</ul>
+	</table>
+
+	<table class="table-bordered">
+	<ul>
+		<tr class="portal-tab"></tr>
+			<th>Services</th>
+			{{#each userList}}
+			<td>{{this.services}}</td>
+			{{/each}}
+	</ul>
+	</table>
+	</div>
 </div>

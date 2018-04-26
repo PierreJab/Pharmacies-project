@@ -9,20 +9,10 @@ const storeSchema = new Schema({
     storeCity: {type: String},
     storeCountry: {type: String},
     storePhoneNumber: {type: String, required: true},
-    storeHours: {type: String},
     prescriptions: {type: Array},
     licenses: {type: Array},
     services: {type: Array},
     rating: {type: Number},
-    storeImage: {
-        originalname: {type: String},
-        secure_url: {type: String} 
-    },
-    /* owner: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    }, */
-    //uploading userId: 
     reviews: [
         {
             reviewer: {type: String },

@@ -24,8 +24,9 @@ const userSchema = new Schema ({
     country: {type: String},
     birthday: {type: Date},
     aboutMe: {type: String},
-    social: {type: String},
-    favorites: {type: Array}
+    favorites: {type: Array},
+    prescriptions: {type: Array},
+    services: {type: Array}
     //link to the user to any stores that they might have created
     /* storesUploaded: {
         type: .....

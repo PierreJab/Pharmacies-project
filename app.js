@@ -74,8 +74,8 @@ app.use('/', authRouter);
 const adminRouter = require('./routes/admin-router');
 app.use('/', adminRouter);
 
-const loggedRouter = require('./routes/logged-router');
-app.use('/', loggedRouter);
+// const loggedRouter = require('./routes/logged-router');
+// app.use('/', loggedRouter);
 
 const mapsRouter = require('./routes/maps-router');
 app.use('/', mapsRouter);
