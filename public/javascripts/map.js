@@ -109,7 +109,8 @@ const mapDiv = document.querySelector(".my-map");
           </div>
           
           <form action="/pharmacy/process-one-pharmacy" method="POST"">
-          <input type="hidden" name="onePlace" value="${onePlace}" />
+          <input type="hidden" name="name" value="${onePlace.name}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.formatted_address}" />
           <p style="text-align: center"><button style="color: black"> More information</button></p>
           </form>
         </div>`;
@@ -141,14 +142,14 @@ const mapDiv = document.querySelector(".my-map");
           infowindow.open(map, marker);
         });
 
-      var information = `<li>
-        <h2>${onePlace.name}
-        <p>${onePlace.formatted_address}</p>
-        <p>${opennn}</p>
+      var information = `<li class="oneItem">
+        <p class="name">${onePlace.name}</p>
+        <p class="address">${onePlace.formatted_address}</p>
+        <p class="open">${opennn}</p>
+        <hr>
         </li>
       `;
-      document.querySelector(".list").append(information);
-      // $( "#maps .list" ).append(content);
+      $(".list").append(information);
 
       });
 
