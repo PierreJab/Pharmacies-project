@@ -29,7 +29,10 @@
 		<tbody class="lists">
 			<tr>
 				{{#each userList}}
+					<h2>{{this.name}}</h2>
+					{{#each userList}}
 					<td>{{this.prescriptions}}</td>
+					{{/each}}
 				{{/each}}
 			</tr>
 		</tbody>
