@@ -113,9 +113,9 @@ router.post("/process-signup", (req, res, next) => {
         
 
         transport.sendMail({
-        from: "Find It <website@example.com>",
+        from: "Find It <findit@findit.com>",
         to: email,
-        subject: `$Find It: Confirm your email`,
+        subject: `Find It: Confirm your email`,
         text: `
             Name: ${fullName}
             Email: ${email}
@@ -373,7 +373,7 @@ router.post("/process-signup", (req, res, next) => {
                                                                 <td align="center" style="font-size:0px;padding:0 25px;padding-top:20px;word-break:break-word;">
         
                                                                     <div style="font-family:Arial, sans-serif;font-size:25px;font-weight:bold;line-height:35px;text-align:center;color:#489BDA;">
-                                                                        Click on the link bellow<br>
+                                                                        Click on the link below<br>
                                                                         <span style="font-size:18px">and find your pharmacy as soon as possible!</span>
                                                                     </div>
         

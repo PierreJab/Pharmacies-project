@@ -7,8 +7,10 @@
     "dev": "set DEBUG=lab-passport-roles:* && nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
     "body-parser": "~1.18.2",
+    "circular-json": "^0.5.3",
     "cloudinary": "^1.11.0",
     "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",

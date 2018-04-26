@@ -104,16 +104,16 @@ const mapDiv = document.querySelector(".my-map");
           
           <form action="/pharmacy/process-one-pharmacy" method="POST"">
           <input type="hidden" name="name" value="${onePlace.name}" />
+          <input type="hidden" name="place_id" value="${onePlace.place_id}" />
           <input type="hidden" name="formattedAddress" value="${onePlace.formatted_address}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.price_level}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.types[0]}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.types[1]}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.types[2]}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.types[3]}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.types[4]}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.rating}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.icon}" />
-          <input type="hidden" name="formattedAddress" value="${openn}" />
+          <input type="hidden" name="price_level" value="${onePlace.price_level}" />
+          <input type="hidden" name="type0" value="${onePlace.types[0]}" />
+          <input type="hidden" name="type1" value="${onePlace.types[1]}" />
+          <input type="hidden" name="type2" value="${onePlace.types[2]}" />
+          <input type="hidden" name="type3" value="${onePlace.types[3]}" />
+          <input type="hidden" name="type4" value="${onePlace.types[4]}" />
+          <input type="hidden" name="icon" value="${onePlace.icon}" />
+          <input type="hidden" name="opennn" value="${opennn}" />
           <p style="text-align: center"><button style="color: black"> More information</button></p>
           </form>
         </div>`;
