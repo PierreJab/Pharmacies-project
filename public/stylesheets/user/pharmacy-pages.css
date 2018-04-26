@@ -31,3 +31,6 @@ color: white;
 width: 10vh;
 }
 
+#pharmacy-pages{
+    min-height: 100vh;
+}
