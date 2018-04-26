@@ -1,6 +1,5 @@
 const mapDiv = document.querySelector(".my-map");
 
-// function initialize() {
 
   const map =
   new google.maps.Map(mapDiv, {
@@ -74,11 +73,6 @@ const mapDiv = document.querySelector(".my-map");
     var service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
 
-    // id = callbackback(results, status);
-
-  //   var request = {
-  //   placeId: id
-  // };
 
   service = new google.maps.places.PlacesService(map);
   service.getDetails({placeId: id}, callback);
@@ -111,6 +105,15 @@ const mapDiv = document.querySelector(".my-map");
           <form action="/pharmacy/process-one-pharmacy" method="POST"">
           <input type="hidden" name="name" value="${onePlace.name}" />
           <input type="hidden" name="formattedAddress" value="${onePlace.formatted_address}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.price_level}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.types[0]}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.types[1]}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.types[2]}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.types[3]}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.types[4]}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.rating}" />
+          <input type="hidden" name="formattedAddress" value="${onePlace.icon}" />
+          <input type="hidden" name="formattedAddress" value="${openn}" />
           <p style="text-align: center"><button style="color: black"> More information</button></p>
           </form>
         </div>`;
@@ -155,8 +158,7 @@ const mapDiv = document.querySelector(".my-map");
 
 
     };
-  }
-
+  };
 
   };
 
@@ -179,126 +181,3 @@ const mapDiv = document.querySelector(".my-map");
 
   
    
-
-
-
-
-/* ------------------------------------------------- */
-
-
-/*
-
-  
-  // retrieve restaurant data from our backend
-  axios.get("/resto/data")
-    .then((response) => {
-      const restoList = response.data;
-  
-      restoList.forEach((oneResto) => {
-        const [ lat, lng ] = oneResto.location.coordinates;
-        new google.maps.Marker({
-          position: { lat, lng },
-          map: map,
-          title: oneResto.name,
-          animation: google.maps.Animation.DROP
-        });
-      });
-    })
-    .catch((err) => {
-      alert("Something went wrong! 💩");
-    });
-  
-  
-  const locationInput = document.querySelector(".location-input");
-  const latInput = document.querySelector(".lat-input");
-  const lngInput = document.querySelector(".lng-input");
-  
-  const autocomplete = new google.maps.places.Autocomplete(locationInput);
-  
-  autocomplete.addListener("place_changed", () => {
-    const place = autocomplete.getPlace();
-    const loc = place.geometry.location;
-  
-    latInput.value = loc.lat();
-    lngInput.value = loc.lng();
-  });
-  
-
-
-}
-
-// Run the initialize function when the window has finished loading.
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
- */
-
-
-
-/* 
-
-
-var map;
-
-function initialize() {
-  // Create a map centered in Pyrmont, Sydney (Australia).
-  map = new google.maps.Map(document.querySelector(".second-map"), {
-    center: {lat: 48.866667, lng: 2.33},
-    zoom: 15
-  });
-
-  // Search for McDonald's in Paris.
-  var request = {
-    location: map.getCenter(),
-    radius: '500',
-    query: 'kfc'
-  };
-
-  var service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
-}
-
-// Checks that the PlacesServiceStatus is OK, and adds a marker
-// using the place ID and location from the PlacesService.
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    var marker = new google.maps.Marker({
-      map: map,
-      place: {
-        placeId: results[0].place_id,
-        location: results[0].geometry.location
-      }
-    });
-    const id = marker.place.placeId;
-    console.log(id)
-  }
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
- */
-
-
-
-
-/* ----------- GET DETAILS ---------- */
-// var request = {
-//   // placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
-//   placeId: 'ChIJhUfAoBFu5kcRELNq_CDpgMg'
-// };
-
-// service = new google.maps.places.PlacesService(map);
-// service.getDetails(request, callback);
-
-// function callback(place, status) {
-//   console.log('place: ', place)
-//   if (status == google.maps.places.PlacesServiceStatus.OK) {
-//     createMarker(place);
-//   }
-// }
-
