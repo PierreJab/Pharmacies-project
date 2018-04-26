@@ -593,14 +593,14 @@ router.get("/prescriptions/edit", (req, res, next) => {
 });
 
 router.post("/scripts-edit/:id", (req, res, next) => {
-    console.log(req.user);
+    var presc = req.user.prescriptions;
     const id = req.params.id;
     const {prescriptions} = req.body;
+    presc.push(prescriptions);
     
 
-    User.findByIdAndUpdate(id)
+    User.findByIdAndUpdate(id, {prescriptions: presc})
     .then((user) => {
-        console.log("updated");
         //user.prescriptions =;
         req.flash("success", "Information saved!");
         res.redirect("/portal");
