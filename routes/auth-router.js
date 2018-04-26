@@ -109,7 +109,7 @@ router.post("/process-signup", (req, res, next) => {
         if (err) {
             res.render("auth-views/signup-form", { message: "Something went wrong" });
         } else {
-            const link = `http://localhost:3000/confirm/${hashUsername}/${email}`;
+            const link = `https://find-it-pharmacies.herokuapp.com/confirm/${hashUsername}/${email}`;
         
 
         transport.sendMail({
@@ -386,7 +386,7 @@ router.post("/process-signup", (req, res, next) => {
                                                                     <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
                                                                         <tr>
                                                                             <td align="center" bgcolor="#8bb420" role="presentation" style="border:none;border-radius:3px;color:#FFFFFF;cursor:auto;padding:10px 25px;" valign="middle">
-                                                                                <a href="http://localhost:3000/confirm/${hashUsername}/${email}" style="background: #8bb420; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 120%; Margin: 0; text-transform: none; text-decoration: none; color: inherit;"
+                                                                                <a href="https://find-it-pharmacies.herokuapp.com/confirm/${hashUsername}/${email}" style="background: #8bb420; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 120%; Margin: 0; text-transform: none; text-decoration: none; color: inherit;"
                                                                                     target="_blank">
                       Confirm your account
                     </a>

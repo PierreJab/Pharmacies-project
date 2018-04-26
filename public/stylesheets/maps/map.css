@@ -3,6 +3,9 @@
     min-height: 100vh;
 }
 
+#maps .nav{
+    padding-top: 15vh;
+}
 
 #maps h1 {
     color: white;
