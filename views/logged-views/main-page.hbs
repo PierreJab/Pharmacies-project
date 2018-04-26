@@ -30,8 +30,8 @@
 			<tr>
 				{{#each userList}}
 					<h2>{{this.name}}</h2>
-					{{#each userList}}
-					<td>{{this.prescriptions}}</td>
+					{{#each this.prescriptions}}
+					<td>{{this}}</td>
 					{{/each}}
 				{{/each}}
 			</tr>
