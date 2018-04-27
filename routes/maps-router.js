@@ -15,7 +15,7 @@ router.get("/portal/maps", (req, res, next) => {
 router.post("/pharmacy/:id", (req, res, next) => {
     // const {place_id} = req.body;
     const place_id = req.params.id;
-    axios.get("https://maps.googleapis.com/maps/api/place/details/json?placeid="+ place_id +"&key=AIzaSyCAJIIGinRa7FIlpr_Ld14c9Uoa8NI4dRM")
+    axios.get("https://maps.googleapis.com/maps/api/place/details/json?placeid="+ place_id +"&key=AIzaSyBhyT3QNbb2e8o7Atie3KZZHwzAqOFrHes")
         .then(placeInfo => {
         // console.log(placeInfo);
         // res.send(placeInfo);
@@ -52,6 +52,21 @@ router.post("/add-pharmacy/:id", (req, res, next) => {
 });
 
 
+router.get("/delete-pharmacy/:placeId", (req, res, next) => {
+    const place_id = req.params.placeId;
+    console.log(req.user);
+    // req.user.favorites
+    User.findByIdAndUpdate(req.user._id, {
+        $pull: {'favorites': {place_id}}}, function(err, model){
+            if(err){
+                console.log(err);
+                return next(err);
+            } 
+            return res.redirect("/portal");
+            // return res.json(model);
+        
+    });
+});
 
 module.exports = router;
 
