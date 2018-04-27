@@ -1,8 +1,8 @@
 <div id="pharmacy-pages">
 
 	<ul class="nav nav-tabs">
-	<li class><a href="/portal">My portal</a></li>
-	<li><a href="/portal/maps">Find pharmacies near me</a></li>
+	<li class="not-active"><a href="/portal">My portal</a></li>
+	<li class="not-active"><a href="/portal/maps">Find pharmacies near me</a></li>
 	<li class="active"><a href="/portal/pharmacies">Our database</a></li>
 	</ul>
 
@@ -15,11 +15,11 @@
         <h2>Pharmacies</h2>
     <ul>
         <tr class="stores">
-            <th>Store Name</th>
-            <th>Phone Number</th>
-            <th>Store Address</th>
-            <th>Prescriptions Offered</th>
-            <th>User Rating</th>
+            <th><h4>Store Name</h4></th>
+            <th><h4>Phone Number</h4></th>
+            <th><h4>Store Address</h4></th>
+            <th><h4>Prescriptions Offered</h4></th>
+            <th><h4>User Rating</h4></th>
         </tr>
     {{#each storeList}}
         <tr class="stores">
@@ -37,7 +37,7 @@
 </ul>
     </table>
 <div class="buttons">
-<a href="/pharmacies/add"><button type="button" class="btn btn-default add-button">Add a Pharmacy</button></a>
+<a href="/pharmacies/add"><button type="button" class="add-button">Add a Pharmacy</button></a>
 </div>
 
 </div>

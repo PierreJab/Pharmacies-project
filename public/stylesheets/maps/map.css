@@ -10,6 +10,22 @@
 }
 
 
+#maps .nav{
+    padding-top: 15vh;
+}
+
+#maps .nav .active a{
+    color: #0c575d;
+}
+
+#maps .nav .not-active a{
+    color: white;
+}
+
+#maps .nav .not-active a:hover{
+    color: #0c575d;
+}
+
 #maps .nav-tabs a{
     text-decoration: none;
     color: black;
