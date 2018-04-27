@@ -20,20 +20,23 @@
 
 		<div class="container col-md-4">
 			<h2>Prescriptions</h2>
-			<p>Keep track of your prescriptions</p>					
+			<p>Keep track of your prescriptions</p>		
+						<ul>			
 						{{#each blahUser.prescriptions}}
 							<li>{{this}}</li>
 						{{/each}}
-
+						</ul>
 			<a href="/prescriptions/edit"><button type="button" class="btn btn-default btn-xs">Add Prescriptions</button></a>
 		</div>
 
 		<div class="container col-lg-4">
 			<h2>Services</h2>
 			<p>The services that you require most frequently</p>
+					<ul>
 					{{#each blahUser.services}}
 						<li>{{this}}</li>
 					{{/each}}
+					</ul>
 			<a href="/services/edit"><button type="button" class="btn btn-default btn-xs">Add Services</button></a>
 		</div>
 	</div>
