@@ -137,7 +137,7 @@ const mapDiv = document.querySelector(".my-map");
           infowindow.open(map, marker);
         });
 
-      var information = `<form action="/pharmacy/${onePlace.place_id}" method="POST""><li class="oneItem">
+      var information = `<form action="/pharmacy/${onePlace.place_id}" method="POST"><li class="oneItem">
         <button>
         <p class="name">${onePlace.name}</p>
         <p class="address">${onePlace.formatted_address}</p>

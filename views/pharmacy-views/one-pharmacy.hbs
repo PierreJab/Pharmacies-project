@@ -12,8 +12,15 @@
     <nav aria-label="...">
         <ul class="pager"  style="margin-left: 5vw">
             <li class="previous"><a href="/portal/maps"><span aria-hidden="true">&larr;</span> Back</a></li>
+            {{!-- {{#if n'est pas dans les favoris}} --}}
+            <li><form action="/add-pharmacy/{{pharmacy.place_id}}" method="POST">
+            <input type="hidden" name="name" value="{{pharmacy.name}}"></input>
+            <button class="favorites">Add to favorites</button>
+            </form></li>
         </ul>
     </nav>
+
+
 
     <h1 id="title"><img src="{{pharmacy.icon}}"> {{pharmacy.name}}</h1>
 
@@ -24,7 +31,7 @@
             
             {{!-- {{#if}} --}}
                 <p><span class="glyphicon glyphicon-star"></span> {{pharmacy.rating}}</p>
-            {{!-- {{/if}} --}}
+            {{!-- {{/if }} --}}
             {{#if pharmacy.price_level }}
                 <p><span class="glyphicon glyphicon-thumbs-up"></span> Users overall price level notation: {{pharmacy.price_level}}</p>
             {{else}}
