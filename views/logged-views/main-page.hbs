@@ -20,29 +20,20 @@
 
 		<div class="container col-md-4">
 			<h2>Prescriptions</h2>
-			<p>Keep track of your prescriptions</p>
-				{{#each userList}}
-					<h2>{{this.name}}</h2>
-					<ul>
-						{{#each this.prescriptions}}
+			<p>Keep track of your prescriptions</p>					
+						{{#each blahUser.prescriptions}}
 							<li>{{this}}</li>
 						{{/each}}
-					</ul>
-				{{/each}}
+
 			<a href="/prescriptions/edit"><button type="button" class="btn btn-default btn-xs">Add Prescriptions</button></a>
 		</div>
 
 		<div class="container col-lg-4">
 			<h2>Services</h2>
 			<p>The services that you require most frequently</p>
-				{{#each userList}}
-					<h2>{{this.name}}</h2>
-					<ul>
-						{{#each this.services}}
-							<li>{{this}}</li>
-						{{/each}}
-					</ul>
-				{{/each}}
+					{{#each blahUser.services}}
+						<li>{{this}}</li>
+					{{/each}}
 			<a href="/services/edit"><button type="button" class="btn btn-default btn-xs">Add Services</button></a>
 		</div>
 	</div>

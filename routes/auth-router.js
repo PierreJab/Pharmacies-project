@@ -63,6 +63,7 @@ router.post("/process-signup", (req, res, next) => {
             .then(() => {
                     // "req.flash()" is defined by the "flash" package
                 req.flash("success", "You have signed up! Try logging in.");
+                
                 res.redirect("/");
             })
             .catch((err) => {

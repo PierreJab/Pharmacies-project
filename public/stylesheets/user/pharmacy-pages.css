@@ -39,12 +39,7 @@ color: white;
 }
 
 
-#pharmacy-pages .add-button{
-    text-decoration: none;
-    background-color: transparent;
-    color: white;
-    margin: 1vh 0 1vh;
-}
+
 
 #pharmacy-pages .edit-button{
     text-decoration: none;
@@ -69,3 +64,14 @@ text-decoration: underline;
     margin-right: 3vw;
 }
 
+
+#portal-page .container .add-button{
+    margin-left: 11vw;
+    margin-top: 3vh;
+    padding: 1vh 2vw;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1vh;
+    outline: none;
+}
