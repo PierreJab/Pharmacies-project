@@ -2,19 +2,36 @@
     margin: 0;
     padding: 0;
     color: black;
-    /* background-color: #ccc; */
-    /* min-height: 250vh; */
 }
 
 #onePharmacy #blank {
-    background-color: #ccc;
-    min-height: 12vh;
+    background-color: #0c575d;
+    min-height: 15vh;
 }
 
 #onePharmacy .nav{
-    padding-top: 5vh;
+    padding-top: 0vh;
+    background-color: #0c575d;
 }
 
+
+#onePharmacy .nav-tabs a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#onePharmacy .nav .active a{
+    color: #0c575d;
+}
+
+#onePharmacy .nav .not-active a{
+    color: white;
+}
+
+#onePharmacy .nav .not-active a:hover{
+    color: #0c575d;
+}
 
 #onePharmacy .nav-tabs a{
     text-decoration: none;

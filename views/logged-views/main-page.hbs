@@ -11,11 +11,22 @@
 		<div class="container col-lg-4">
 			<h2>Favorites</h2>
 			<p>A list of your favorite pharmacies</p>
-				<ul>
+				<ul id="line">
 					{{#each user.favorites}}
 						<li>
 							<form action="/pharmacy/{{this.place_id}}" method="POST"><button class="oneFavorite">{{this.name}}</button></form>
-							
+							<form action="/delete-pharmacy/{{this.place_id}}" method="GET">
+								<button class='centerMe'>
+									<div class='icon'>
+										<i class='fa fa-trash-o'></i>
+										<i class='fa fa-question'></i>
+										<i class='fa fa-check'></i>
+									</div>
+									<div class='text'>
+										<span>Delete</span>
+									</div>
+								</button>
+							</form>
 						</li>
 					{{/each}}
 				</ul>
