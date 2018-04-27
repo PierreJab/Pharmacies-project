@@ -63,6 +63,7 @@ router.post("/process-signup", (req, res, next) => {
             .then(() => {
                     // "req.flash()" is defined by the "flash" package
                 req.flash("success", "You have signed up! Try logging in.");
+                
                 res.redirect("/");
             })
             .catch((err) => {
@@ -576,8 +577,6 @@ router.post("/services-edit/:id", (req, res, next) => {
     const id = req.params.id;
     const {services} = req.body;
     serv.push(services);
-
-    console.log(services);
 
     User.findByIdAndUpdate(id, {services: serv})
     .then((user) => {

@@ -1,7 +1,7 @@
 
 
 #pharmacy-pages{
-    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    background: #0C575D;
     padding: 15vh 0;
 }
 
@@ -12,12 +12,7 @@
 
 #pharmacy-pages h2{
     text-align: center;
-}
-
-#pharmacy-pages .table-responsive{
-    background:#339999;
-    width: 80vw;
-    margin: .5em 5em 2em;
+    align-content: center;
 }
 
 #pharmacy-pages .add{
@@ -43,6 +38,40 @@ color: white;
     width: 10vw;
 }
 
+
+
+
 #pharmacy-pages .edit-button{
     text-decoration: none;
+    background-color: transparent;
+    color: white;
+    margin: 1vh 0 1vh;
+    border: none;
+}
+
+#pharmacy-pages .edit-button:hover{
+text-decoration: underline;
+}
+
+#pharmacy-pages {
+    color: white;
+}
+
+#pharmacy-pages .container-fluid {
+    margin-top: 4vh;
+    align-content: center;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+
+#portal-page .container .add-button{
+    margin-left: 11vw;
+    margin-top: 3vh;
+    padding: 1vh 2vw;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1vh;
+    outline: none;
 }

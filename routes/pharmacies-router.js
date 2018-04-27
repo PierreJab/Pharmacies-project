@@ -30,7 +30,13 @@ router.get("/portal", (req, res, next) => {
         //let userList = usersFromDb;
         // console.log(usersFromDb);
         res.locals.userList = usersFromDb;
+        // var userName = req.user._id;
+        // router.locals.userName = userName;
+        // console.log(userName);
         res.render("logged-views/main-page")
+    })
+    .catch(err => {
+        console.log(err)
     })
 
     
