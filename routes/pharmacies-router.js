@@ -25,11 +25,11 @@ router.get("/portal", (req, res, next) => {
     if (!req.user){
         next();
     }
-    User.find()
-    .then((usersFromDb) => {
+    User.findById(req.user._id)
+    .then((oneUser) => {
         //let userList = usersFromDb;
-        // console.log(usersFromDb);
-        res.locals.userList = usersFromDb;
+        console.log(oneUser);
+        res.locals.user = oneUser;
         // var userName = req.user._id;
         // router.locals.userName = userName;
         // console.log(userName);

@@ -8,6 +8,18 @@
     padding-top: 15vh;
 }
 
+#portal-page .nav .active a{
+    color: #0c575d;
+}
+
+#portal-page .nav .not-active a{
+    color: white;
+}
+
+#portal-page .nav .not-active a:hover{
+    color: #0c575d;
+}
+
 #portal-page .container{
     color: white;
     margin-top: 4vh;

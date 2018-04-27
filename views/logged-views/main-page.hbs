@@ -2,8 +2,8 @@
 
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="/portal">My portal</a></li>
-		<li><a href="/portal/maps">Find pharmacies near me</a></li>
-		<li><a href="/portal/pharmacies">Our database</a></li>
+		<li class="not-active"><a href="/portal/maps">Find pharmacies near me</a></li>
+		<li class="not-active"><a href="/portal/pharmacies">Our database</a></li>
 
 	</ul>
 
@@ -12,11 +12,15 @@
 			<h2>Favorites</h2>
 			<p>A list of your favorite pharmacies</p>
 				<ul>
-					{{#each userList}}
-						<li>{{this.favorites.name}}</li>
+					{{#each user.favorites}}
+						<li>
+							<form action="/pharmacy/{{this.place_id}}" method="POST"><button class="oneFavorite">{{this.name}}</button></form>
+
+						</li>
 					{{/each}}
 				</ul>
 		</div>
+	
 
 		<div class="container col-md-4">
 			<h2>Prescriptions</h2>

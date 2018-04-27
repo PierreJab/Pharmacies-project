@@ -24,7 +24,6 @@ const userSchema = new Schema ({
     country: {type: String},
     birthday: {type: Date},
     aboutMe: {type: String},
-    // favorites: {type: Array},
     favorites: [
         {
             place_id: {type: String},
