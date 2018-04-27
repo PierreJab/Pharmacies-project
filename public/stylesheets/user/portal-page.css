@@ -43,6 +43,7 @@
     border: 1px solid white;
     border-radius: 1vh;
     outline: none;
+    align-content: center;
 }
 
 #portal-page .container button:hover{
