@@ -1,0 +1,44 @@
+#portal-page {
+    background-color: #0c575d;
+    min-height: 100vh;
+}   
+
+
+#portal-page .nav{
+    padding-top: 15vh;
+}
+
+#portal-page .container{
+    color: white;
+    margin-top: 4vh;
+}
+
+#portal-page .container h2{
+    text-align: center;
+}
+
+#portal-page .container ul{
+    margin-top: 5vh;
+    list-style: none;   
+}
+
+#portal-page .container button{
+    margin-left: 11vw;
+    margin-top: 3vh;
+    padding: 1vh 2vw;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1vh;
+    outline: none;
+}
+
+#portal-page .container button:hover{
+    background-color: white;
+    color: #0c575d;
+    font-weight: bold;
+}
+
+#portal-page .container ul li{
+    margin: 1vh 2vw;
+}

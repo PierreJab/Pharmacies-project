@@ -1,5 +1,4 @@
-<div id = "pharmacy-pages">
-
+<div id="portal-page">
 
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="/portal">My portal</a></li>
@@ -8,54 +7,44 @@
 
 	</ul>
 
-<div class="container col-lg-4">
-	<h2>Favorites</h2>
-	<p>A list of your favorite pharmacies</p>
-	<table class="table responsive">
-		<tbody class="lists">
-			<tr>
-				{{#each userList}}
-					<td>{{this.favorites.name}}</td>
-				{{/each}}
-			</tr>
-		</tbody>
-	</table>
-</div>
+	<div class="container-fluid">
+		<div class="container col-lg-4">
+			<h2>Favorites</h2>
+			<p>A list of your favorite pharmacies</p>
+				<ul>
+					{{#each userList}}
+						<li>{{this.favorites.name}}</li>
+					{{/each}}
+				</ul>
+		</div>
 
-<div class="container col-md-4">
-	<h2>Prescriptions</h2>
-	<p>Keep track of your prescriptions</p>
-	<table class="table responsive shrink">
-		<tbody class="lists">
-			<tr>
+		<div class="container col-md-4">
+			<h2>Prescriptions</h2>
+			<p>Keep track of your prescriptions</p>
 				{{#each userList}}
 					<h2>{{this.name}}</h2>
-					{{#each this.prescriptions}}
-					<li>{{this}}</li>
-					{{/each}}
+					<ul>
+						{{#each this.prescriptions}}
+							<li>{{this}}</li>
+						{{/each}}
+					</ul>
 				{{/each}}
-			</tr>
-		</tbody>
-	</table>
-	<button type="button" class="btn btn-default btn-xs"><a href="/prescriptions/edit">Add Prescriptions</a></button>
-</div>
+			<a href="/prescriptions/edit"><button type="button" class="btn btn-default btn-xs">Add Prescriptions</button></a>
+		</div>
 
-<div class="container col-lg-4">
-	<h2>Services</h2>
-	<p>The services that you require most frequently</p>
-	<table class="table responsive">
-		<tbody class="lists">
-			<tr>
+		<div class="container col-lg-4">
+			<h2>Services</h2>
+			<p>The services that you require most frequently</p>
 				{{#each userList}}
 					<h2>{{this.name}}</h2>
-					{{#each this.services}}
-					<li>{{this}}</li>
-					{{/each}}
+					<ul>
+						{{#each this.services}}
+							<li>{{this}}</li>
+						{{/each}}
+					</ul>
 				{{/each}}
-			</tr>
-		</thead>
-	</table>
-	<button type="button" class="btn btn-default btn-xs"><a href="/services/edit">Add Services</a></button>
-</div>
+			<a href="/services/edit"><button type="button" class="btn btn-default btn-xs">Add Services</button></a>
+		</div>
+	</div>
 
 </div>
