@@ -11,7 +11,7 @@
 <div class="table-responsive">
     
 
-    <table class="table">
+    <table class="table responsive">
         <h2>Pharmacies</h2>
     <ul>
         <tr class="stores">
@@ -19,7 +19,7 @@
             <th><h4>Phone Number</h4></th>
             <th><h4>Store Address</h4></th>
             <th><h4>Prescriptions Offered</h4></th>
-            <th><h4>User Rating</h4></th>
+            <!--<th><h4>User Rating</h4></th> -->
         </tr>
     {{#each storeList}}
         <tr class="stores">
@@ -28,7 +28,7 @@
             <td>{{this.storePhoneNumber}}</td>
             <td>{{this.storeAddress}}<br>{{this.storeCity}} {{this.storeZip}}</td>
             <td>{{this.prescriptions}}</td>
-            <td>{{this.rating}}</td>
+            <!-- <td>{{this.rating}}</td> -->
 
         </div>
     {{/each}}

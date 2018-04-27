@@ -42,9 +42,6 @@ router.get("/portal", (req, res, next) => {
     
 })
 
-//portal edit prescriptions
-//portal edit services
-
 //all pharmacies
 
 router.get("/portal/pharmacies", (req, res, next) => {
@@ -111,6 +108,40 @@ router.get("/pharmacies/:id", (req, res, next) => {
         next(err);
     });
 });
+
+//store edit
+
+router.get("/pharmacies/edit", (req, res, next) => {
+    // res.locals.pharmaDetails = req.store;
+    res.render("pharmacy-views/store-edit");
+});
+
+// router.post("/store-process-edit/:id", (req, res, next) => {
+//     if (!req.user){
+//         next();
+//         return;
+//     }
+
+//     id = req.params.id;
+//     const {storeAddress, storePhoneNumber, licenses, prescriptions, services} = req.body;
+
+//     Store.findByIdAndUpdate(id, 
+//         {
+//             storeAddress, 
+//             storePhoneNumber, 
+//             licenses, 
+//             prescriptions, 
+//             services
+//         })
+//     .then(() => {
+//         console.log("updated");
+//         req.flash("success", "Information saved!");
+//         res.redirect("/portal");
+//     })
+//     .catch((err) => {
+//         next(err);
+//     })
+// });
 
 //delete??
 

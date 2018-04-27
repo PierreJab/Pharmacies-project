@@ -6,7 +6,12 @@
 
         <div id="info">
 
-            <form action="/process-store-edit"
+            <form action="/store-process-edit/:id" method="POST">
+                <label>
+                    <p>Store Address:</p>
+                    <input type="text" name="storeName" value="{{storeDetails.storeAddress}}" placeholder="Update the store's address">
+                </label>
+            </form>
 
         </div>
 

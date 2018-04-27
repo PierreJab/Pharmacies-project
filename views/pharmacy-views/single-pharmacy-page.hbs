@@ -1,14 +1,14 @@
 <div id="pharmacy-pages">
 
-
-<ul class="nav nav-tabs">
-	<li><a href="/portal">Portal Home</a></li>
-	<li><a href="/portal/pharmacies">Go Back</a></li>
-	<li><a href="/portal/maps">Map</a></li>
+	<ul class="nav nav-tabs">
+	    <li class="not-active"><a href="/portal">My portal</a></li>
+	    <li class="not-active"><a href="/portal/maps">Find pharmacies near me</a></li>
+	    <li class="not-active"><a href="/portal/pharmacies">Our database</a></li>
 	</ul>
 
-    <div class="container">
 
+    <div class="container-fluid">
+<!--
         <div class = "table-responsive">
         <table class="table">
             <h2>User feedback about {{Store.storeName}}</h2>
@@ -20,15 +20,16 @@
         <th>User reviews:</th>
         <td>{{Store.reviews}}</td>
         </tr>
-
-<button type="button" class="btn btn-info"><a href="/pharmacies/edit">Leave a review</a></button>    
+ 
 
     </div>
 
 </table>
 <div class="buttons">
-<button type="button" class="btn btn-info"><a href="/">Add to Favorites</a></button>
+<a href="/"><button type="button" class="add-button">Add to Favorites</button></a>  
+<a href="/pharmacies/edit"><button type="button" class="add-button">Leave a review</button></a>
 </div>
+-->
 </div>
 <div class = "table-responsive">
     <table class="table">
@@ -57,9 +58,9 @@
         <td>{{Store.storeServices}}</td>
     </tr>
     </table>
+    <!--
     <div class="buttons">
-    <button type="button" class="btn btn-info"><a href="/">Edit Details</a></button>
-    <button type="button" class="btn btn-info"><a href="/pharmacies/{{this.id}}/delete">Delete</a></button>
+    <a href="/pharmacies/edit"><button type="button" class="add-button">Edit Details</button></a>
     </div>
-
+-->
 </div>
