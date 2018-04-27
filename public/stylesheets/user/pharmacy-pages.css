@@ -93,3 +93,8 @@ text-decoration: underline;
     color: #0C575D;
     font-weight: bold;
 }
+
+#pharmacy-pages .about{
+    align-content: center;
+    text-align: center;
+}
