@@ -41,6 +41,7 @@ const mapDiv = document.querySelector(".my-map");
     });
 
 
+
   document.querySelector(".search button").onclick = function (){
 
     var lati = Number(latInput.value);
@@ -125,19 +126,11 @@ const mapDiv = document.querySelector(".my-map");
             animation: google.maps.Animation.DROP
           });
 
-        // marker.addListener('mouseover', function() {
-        //   infowindow.open(map, marker);
-        // });
-
-        // marker.addListener('mouseout', function() {
-        //   infowindow.close(map, marker);
-        // });
-
         marker.addListener('click', function() {
           infowindow.open(map, marker);
         });
 
-      var information = `<form action="/pharmacy/${onePlace.place_id}" method="POST"><li class="oneItem">
+      var information = $(`<form action="/pharmacy/${onePlace.place_id}" method="POST"><li class="oneItem">
         <button>
         <p class="name">${onePlace.name}</p>
         <p class="address">${onePlace.formatted_address}</p>
@@ -145,10 +138,21 @@ const mapDiv = document.querySelector(".my-map");
         <hr>
         </button>
         </li></form>
-      `;
+      `);
       $(".list").append(information);
 
+      
+      information.find(".oneItem").mouseover( function(){
+        // marker.setAnimation(google.maps.Animation.BOUNCE)
+        infowindow.open(map, marker);
       });
+      information.find(".oneItem").mouseout( function(){
+        // marker.setAnimation(null);
+        infowindow.close(map, marker);
+      });
+      
+    });
+
 
 
     };
