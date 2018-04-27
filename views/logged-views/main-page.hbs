@@ -47,7 +47,10 @@
 		<tbody class="lists">
 			<tr>
 				{{#each userList}}
-				<li>{{this.services}}</li>
+					<h2>{{this.name}}</h2>
+					{{#each this.services}}
+					<li>{{this}}</li>
+					{{/each}}
 				{{/each}}
 			</tr>
 		</thead>

@@ -571,11 +571,13 @@ router.get("/services/edit", (req, res, next) => {
     res.render("auth-views/services-edit");
 })
 
-router.post("/services-edit/:iz", (req, res, next) => {
+router.post("/services-edit/:id", (req, res, next) => {
     var serv = req.user.services;
     const id = req.params.id;
     const {services} = req.body;
     serv.push(services);
+
+    console.log(services);
 
     User.findByIdAndUpdate(id, {services: serv})
     .then((user) => {
