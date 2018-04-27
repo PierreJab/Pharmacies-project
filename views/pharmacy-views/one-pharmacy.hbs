@@ -1,7 +1,71 @@
-<div>
+<div id="onePharmacy">
 
-    <h2>This is one pharmacy</h2>
+    <div id="blank">
+    </div>
+
+    <ul class="nav nav-tabs">
+		<li class="active"><a href="/portal">My portal</a></li>
+		<li><a href="/portal/maps">Find pharmacies near me</a></li>
+		<li><a href="/portal/pharmacies">Our database</a></li>
+	</ul>
+
+    <h1 id="title"><img src="{{pharmacy.icon}}"> {{pharmacy.name}}</h1>
+
+    <div id="head">
+        <div id="major">
+            <p><span class="glyphicon glyphicon-home"></span> {{pharmacy.formatted_address}}</p>
+            <p><span class="glyphicon glyphicon-earphone"></span> {{pharmacy.formatted_phone_number}}</p>
+            
+            {{!-- {{#if}} --}}
+                <p><span class="glyphicon glyphicon-star"></span> {{pharmacy.rating}}</p>
+            {{!-- {{/if}} --}}
+            {{#if pharmacy.price_level }}
+                <p><span class="glyphicon glyphicon-thumbs-up"></span> Users overall price level notation: {{pharmacy.price_level}}</p>
+            {{else}}
+                <p><span class="glyphicon glyphicon-thumbs-up"></span> Price Notation: -</p>
+            {{/if}}
+            {{#if pharmacy.website}}
+                <p><span class="glyphicon glyphicon-link"></span> <a href="{{pharmacy.website}}" target="_blank">Visit their website</a></p>
+            {{/if}}
+        </div>
+    
+        <ul class="types">
+            <li><span class="glyphicon glyphicon-ok"></span> {{pharmacy.types.[0]}}</li>
+            <li><span class="glyphicon glyphicon-ok"></span> {{pharmacy.types.[1]}}</li>
+            <li><span class="glyphicon glyphicon-ok"></span> {{pharmacy.types.[2]}}</li>
+            {{!-- <li><span class="glyphicon glyphicon-ok"></span> {{pharmacy.types.[3]}}</li> --}}
+            <li><span class="glyphicon glyphicon-ok"></span> {{pharmacy.types.[4]}}</li>
+        </ul>
+    </div>
 
 
-    <p>{{}}</p>
-</div>
+    <ul class="hours">
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[0]}}</li>
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[1]}}</li>
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[2]}}</li>
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[3]}}</li>
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[4]}}</li>
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[5]}}</li>
+        <li><span class="glyphicon glyphicon-time"></span> {{pharmacy.opening_hours.weekday_text.[6]}}</li>
+    </ul>
+
+    
+    
+
+    {{#if pharmacy.reviews}}
+    <h3 class="comments">Comments</h3>
+
+        {{#each pharmacy.reviews}}
+        
+            <div class="container">
+
+                <img src="{{this.profile_photo_url}}" alt="Avatar" style="width:90px">
+                <ul>
+                    <li><span>{{this.author_name}}</span></li>
+                    <li>{{this.text}}</li>
+                </ul>
+            </div>
+        {{/each}}
+
+    {{/if}}
+</div> 

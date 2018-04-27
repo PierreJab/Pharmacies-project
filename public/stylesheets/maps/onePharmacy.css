@@ -1,3 +1,132 @@
-#onePharmacy {
+#onePharmacy{
+    margin: 0;
+    padding: 0;
     color: black;
+    /* background-color: #ccc; */
+    /* min-height: 250vh; */
+}
+
+#onePharmacy #blank {
+    background-color: #ccc;
+    min-height: 12vh;
+}
+
+#onePharmacy .nav{
+    padding-top: 5vh;
+}
+
+
+#onePharmacy .nav-tabs a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#onePharmacy #title{
+    text-align: center;
+    margin: 3vh 0;
+    /* margin-left: 40vw; */
+    display: flex;
+    align-items: baseline;
+    justify-content: center
+}
+
+#onePharmacy #title img{
+    margin-right: 3vw;
+}
+
+#onePharmacy #head{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2vh;
+    margin-top: 5vh;
+}
+
+#onePharmacy #major {
+    float: left;
+    margin: 3vh 8vw;
+}
+
+#onePharmacy #major p {
+    display: flex;
+    justify-content: left;
+}
+
+#onePharmacy #major p span{
+    margin-right: 2vh;
+}
+
+#onePharmacy .types{
+    margin-right: 18vw;
+}
+
+#onePharmacy .types li{
+    list-style: none;
+    padding: 0.5vh 0;
+}
+
+#onePharmacy .types li span{
+    margin-right: 2vh;
+}
+
+
+#onePharmacy .hours{
+    margin-left: 5vw;
+}
+
+#onePharmacy .hours li{
+    list-style: none;
+    font-size: 2vh;
+    padding: 0.5vh 0;
+}
+
+#onePharmacy .hours li span{
+    margin-right: 2vh;
+}
+
+
+
+
+
+/* ------- Comments ----------- */
+
+#onePharmacy .comments{
+    margin: 3vh 5vw 1vh 5vw;
+    text-align: center;
+}
+
+#onePharmacy .container {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 9vw;
+    float: left; 
+    text-align: justify;
+  }
+  
+  #onePharmacy  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+ #onePharmacy .container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+#onePharmacy .container span {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+#onePharmacy .container li{
+    list-style: none;
+}
+
+#onePharmacy .container .star{
+    font-size: 2vh;
+    float: left;
 }
