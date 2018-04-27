@@ -6,6 +6,8 @@
 	<li class="active"><a href="/portal/pharmacies">Our database</a></li>
 	</ul>
 
+<div class = "container-fluid">
+
 <div class="table-responsive">
     
 
@@ -22,7 +24,7 @@
     {{#each storeList}}
         <tr class="stores">
             <td>
-            <button type="button" class="btn btn-default btn-xs"><a href="/pharmacies/{{this._id}}"><strong>{{this.storeName}}</strong></a></button></td>
+            <a href="/pharmacies/{{this._id}}"><button type="button" class="btn btn-default btn-xs edit-button"><strong>{{this.storeName}}</strong></button></a></td>
             <td>{{this.storePhoneNumber}}</td>
             <td>{{this.storeAddress}}<br>{{this.storeCity}} {{this.storeZip}}</td>
             <td>{{this.prescriptions}}</td>
@@ -32,12 +34,12 @@
     {{/each}}
 
 
-
-
 </ul>
     </table>
 <div class="buttons">
-<button type="button" class="btn btn-default add"><a href="/pharmacies/add">Add a Pharmacy</a></button>
+<a href="/pharmacies/add"><button type="button" class="btn btn-default add-button">Add a Pharmacy</button></a>
+</div>
+
 </div>
 
 </div>

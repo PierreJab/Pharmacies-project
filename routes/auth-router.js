@@ -577,8 +577,6 @@ router.post("/services-edit/:id", (req, res, next) => {
     const {services} = req.body;
     serv.push(services);
 
-    console.log(services);
-
     User.findByIdAndUpdate(id, {services: serv})
     .then((user) => {
         req.flash("success", "Information saved!");
