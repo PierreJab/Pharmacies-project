@@ -15,7 +15,7 @@
 					{{#each user.favorites}}
 						<li>
 							<form action="/pharmacy/{{this.place_id}}" method="POST"><button class="oneFavorite">{{this.name}}</button></form>
-
+							
 						</li>
 					{{/each}}
 				</ul>
@@ -30,7 +30,7 @@
 							<li>{{this}}</li>
 						{{/each}}
 						</ul>
-			<a href="/prescriptions/edit"><button type="button" class="btn btn-default btn-xs">Add Prescriptions</button></a>
+			<a href="/prescriptions/edit" class="add"><button type="button" class="btn btn-default btn-xs add">Add Prescriptions</button></a>
 		</div>
 
 		<div class="container col-lg-4">
@@ -41,7 +41,7 @@
 						<li>{{this}}</li>
 					{{/each}}
 					</ul>
-			<a href="/services/edit"><button type="button" class="btn btn-default btn-xs">Add Services</button></a>
+			<a href="/services/edit" class="add"><button type="button" class="btn btn-default btn-xs add">Add Services</button></a>
 		</div>
 	</div>
 

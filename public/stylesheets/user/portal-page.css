@@ -20,6 +20,19 @@
     color: #0c575d;
 }
 
+#portal-page .oneFavorite{
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    border: none;
+}
+
+#portal-page .oneFavorite:hover{
+    color: whitesmoke;
+}
+
+
+
 #portal-page .container{
     color: white;
     margin-top: 4vh;
@@ -34,7 +47,7 @@
     list-style: none;   
 }
 
-#portal-page .container button{
+#portal-page .container .add button{
     margin-left: 11vw;
     margin-top: 3vh;
     padding: 1vh 2vw;
@@ -46,7 +59,7 @@
     align-content: center;
 }
 
-#portal-page .container button:hover{
+#portal-page .container .add button:hover{
     background-color: white;
     color: #0c575d;
     font-weight: bold;
@@ -55,3 +68,5 @@
 #portal-page .container ul li{
     margin: 1vh 2vw;
 }
+
+
