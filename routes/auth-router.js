@@ -572,13 +572,13 @@ router.get("/services/edit", (req, res, next) => {
 })
 
 router.post("/services-edit/:iz", (req, res, next) => {
+    var serv = req.user.services;
     const id = req.params.id;
     const {services} = req.body;
-    User.findByIdAndUpdate(id, {
-        services
-    })
-    .then(() => {
-        //console.log("updated");
+    serv.push(services);
+
+    User.findByIdAndUpdate(id, {services: serv})
+    .then((user) => {
         req.flash("success", "Information saved!");
         res.redirect("/portal");
     })

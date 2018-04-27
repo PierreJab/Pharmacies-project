@@ -31,7 +31,7 @@
 				{{#each userList}}
 					<h2>{{this.name}}</h2>
 					{{#each this.prescriptions}}
-					<td>{{this}}</td>
+					<li>{{this}}</li>
 					{{/each}}
 				{{/each}}
 			</tr>
@@ -47,7 +47,7 @@
 		<tbody class="lists">
 			<tr>
 				{{#each userList}}
-				<td>{{this.services}}</td>
+				<li>{{this.services}}</li>
 				{{/each}}
 			</tr>
 		</thead>
