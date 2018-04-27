@@ -59,6 +59,18 @@
     padding: 0;
 }
 
+#maps #map li button{
+    margin: 0;
+    padding: 0;
+    background-color: transparant;
+    width: 100%;
+    border: none;
+}
+
+#maps #map li button:hover{
+    background-color: whitesmoke;
+}
+
 #maps #map li .name{
     color: black;
     font-size: 2vh;

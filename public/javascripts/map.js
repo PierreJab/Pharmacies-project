@@ -75,7 +75,7 @@ const mapDiv = document.querySelector(".my-map");
 
 
   service = new google.maps.places.PlacesService(map);
-  service.getDetails({placeId: id}, callback);
+  // service.getDetails({placeId: id}, callback);
 
   function callback(place, status) {
     console.log('place: ', place)
@@ -85,13 +85,15 @@ const mapDiv = document.querySelector(".my-map");
         const latitude = onePlace.geometry.viewport.f.f;
         const longitude = onePlace.geometry.viewport.b.b;
 
-        if (onePlace.opening_hours.open_now){
-          var opennn = "Open Now";
-          var color = "green"
-        } else {
-          var opennn = "Closed";
-          var color = "red"
-        }
+        if (onePlace.opening_hours){
+          if (onePlace.opening_hours.open_now){
+            var opennn = "Open Now";
+            var color = "green"
+          } else {
+            var opennn = "Closed";
+            var color = "red"
+          };
+        };
 
         const content = `<div id="content"> 
         <img src="" alt="">
@@ -102,18 +104,8 @@ const mapDiv = document.querySelector(".my-map");
             <p style="color: ${color};  font-weight: bold; padding: 2vh 0">${opennn}</p>
           </div>
           
-          <form action="/pharmacy/process-one-pharmacy" method="POST"">
-          <input type="hidden" name="name" value="${onePlace.name}" />
-          <input type="hidden" name="place_id" value="${onePlace.place_id}" />
-          <input type="hidden" name="formattedAddress" value="${onePlace.formatted_address}" />
-          <input type="hidden" name="price_level" value="${onePlace.price_level}" />
-          <input type="hidden" name="type0" value="${onePlace.types[0]}" />
-          <input type="hidden" name="type1" value="${onePlace.types[1]}" />
-          <input type="hidden" name="type2" value="${onePlace.types[2]}" />
-          <input type="hidden" name="type3" value="${onePlace.types[3]}" />
-          <input type="hidden" name="type4" value="${onePlace.types[4]}" />
-          <input type="hidden" name="icon" value="${onePlace.icon}" />
-          <input type="hidden" name="opennn" value="${opennn}" />
+          <form action="/pharmacy/${onePlace.place_id}" method="POST"">
+   
           <p style="text-align: center"><button style="color: black"> More information</button></p>
           </form>
         </div>`;
@@ -145,12 +137,14 @@ const mapDiv = document.querySelector(".my-map");
           infowindow.open(map, marker);
         });
 
-      var information = `<li class="oneItem">
+      var information = `<form action="/pharmacy/${onePlace.place_id}" method="POST""><li class="oneItem">
+        <button>
         <p class="name">${onePlace.name}</p>
         <p class="address">${onePlace.formatted_address}</p>
         <p class="open">${opennn}</p>
         <hr>
-        </li>
+        </button>
+        </li></form>
       `;
       $(".list").append(information);
 
